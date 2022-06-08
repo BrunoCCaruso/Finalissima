@@ -3,16 +3,14 @@ package com.hardcode.playgym.entity;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.io.Serializable;
 import java.util.List;
-
 import static javax.persistence.GenerationType.IDENTITY;
 
 
 @Data
 @Entity
 @Table
-public class Cliente implements Serializable {
+public class Cliente {
 
     @Id
     @Column
@@ -42,13 +40,13 @@ public class Cliente implements Serializable {
 
     @Column
     private Double peso;
-
+/*
     @Column
     private List<Asesor> asesores;
 
     @Column
     private List<Ejercicio> ejercicios;
-
+*/
     @Column
     private String imagen;
 

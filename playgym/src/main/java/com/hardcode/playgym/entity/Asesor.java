@@ -31,12 +31,12 @@ public class Asesor implements Serializable {
 
     @Column(nullable = false)
     private boolean eliminado;
-
+/*
     @Column(nullable = false)
     private GrupoMuscular grupoMuscular;
 
     @Column(nullable = false)
-    private List<Cliente> clientes;
+    private List<Cliente> clientes;*/
 
     @Column(nullable = false)
     private String imagen;

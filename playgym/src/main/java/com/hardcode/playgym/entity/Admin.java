@@ -28,10 +28,12 @@ public class Admin implements Serializable {
 
     @Column(nullable = false)
     private String rol = "ADMIN";
-
+/*
     @Column(nullable = false)
     private List<Asesor> asesores;
 
     @Column(nullable = false)
     private List<Cliente> clientes;
+
+*/
 }

@@ -22,7 +22,9 @@ public class GrupoMuscular implements Serializable {
 
     @Column(nullable = false)
     private boolean trenInf;
-
+/*
     @Column(nullable = false)
     private List<Ejercicio> ejercicios;
+
+ */
 }
