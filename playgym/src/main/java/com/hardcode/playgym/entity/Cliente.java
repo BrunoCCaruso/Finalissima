@@ -1,13 +1,20 @@
 package com.hardcode.playgym.entity;
 
-import lombok.Data;
+
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.List;
+
+import static javax.persistence.FetchType.EAGER;
 import static javax.persistence.GenerationType.IDENTITY;
 
 
-@Data
+@Getter
+@Setter
+@NoArgsConstructor
 @Entity
 @Table
 public class Cliente {
@@ -24,7 +31,7 @@ public class Cliente {
     private String email;
 
     @Column(nullable = false)
-    private String contraseña;
+    private String contrasenia;
 
     @Column(nullable = false)
     private String rol = "USUARIO";
@@ -40,12 +47,16 @@ public class Cliente {
 
     @Column
     private Double peso;
-/*
-    @Column
+
+    @ManyToMany(fetch = EAGER)
+    @JoinColumn(name = "asesores", referencedColumnName = "id", nullable = false)
+    //private Asesor asesores;
     private List<Asesor> asesores;
 
-    @Column
-    private List<Ejercicio> ejercicios;
+    /*@OneToMany(fetch = EAGER)
+    @JoinColumn(name = "ejercicios_cliente", referencedColumnName = "id", nullable = false)
+    private List<Ejercicio> ejerciciosCliente;
+    //private Ejercicio ejercicios;
 */
     @Column
     private String imagen;

@@ -2,12 +2,19 @@ package com.hardcode.playgym.entity;
 
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
 
-@Data
+import static javax.persistence.FetchType.EAGER;
+
+@Getter
+@Setter
+@NoArgsConstructor
 @Entity
 @Table
 public class Asesor implements Serializable {
@@ -31,12 +38,16 @@ public class Asesor implements Serializable {
 
     @Column(nullable = false)
     private boolean eliminado;
-/*
-    @Column(nullable = false)
-    private GrupoMuscular grupoMuscular;
 
-    @Column(nullable = false)
-    private List<Cliente> clientes;*/
+   /* @ManyToMany(fetch = EAGER)
+    @JoinColumn(name = "lista_grupo_muscular", referencedColumnName = "id", nullable = false)
+    private List<GrupoMuscular> listaGrupoMuscular;*/
+
+    @ManyToMany(fetch = EAGER)
+    @JoinColumn(name = "clientes", referencedColumnName = "id", nullable = false)
+    private List<Cliente> clientes;
+   // private Cliente clientes;
+
 
     @Column(nullable = false)
     private String imagen;
