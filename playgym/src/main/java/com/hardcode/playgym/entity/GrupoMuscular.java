@@ -1,7 +1,6 @@
 package com.hardcode.playgym.entity;
 
 
-import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -10,7 +9,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
 
-import static javax.persistence.FetchType.EAGER;
+
 
 @Entity
 @Table
@@ -21,7 +20,7 @@ public class GrupoMuscular implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column
+    @Column(name = "grupo_muscular_id")
     private Long id;
 
     @Column(nullable = false)
@@ -30,10 +29,9 @@ public class GrupoMuscular implements Serializable {
     @Column(nullable = false)
     private boolean trenInf;
 
-    @ManyToMany(fetch = EAGER)
-    @JoinColumn(name = "ejercicios", referencedColumnName = "id", nullable = false)
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+
     private List<Ejercicio> ejercicios;
-    //private Ejercicio ejercicios;
 
 
 }

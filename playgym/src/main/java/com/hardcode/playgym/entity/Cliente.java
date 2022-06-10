@@ -8,7 +8,6 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.util.List;
 
-import static javax.persistence.FetchType.EAGER;
 import static javax.persistence.GenerationType.IDENTITY;
 
 
@@ -20,7 +19,7 @@ import static javax.persistence.GenerationType.IDENTITY;
 public class Cliente {
 
     @Id
-    @Column
+    @Column(name = "cliente_id")
     @GeneratedValue(strategy = IDENTITY)
     private Long id;
 
@@ -48,16 +47,12 @@ public class Cliente {
     @Column
     private Double peso;
 
-    @ManyToMany(fetch = EAGER)
-    @JoinColumn(name = "asesores", referencedColumnName = "id", nullable = false)
-    //private Asesor asesores;
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private List<Asesor> asesores;
 
-    /*@OneToMany(fetch = EAGER)
-    @JoinColumn(name = "ejercicios_cliente", referencedColumnName = "id", nullable = false)
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private List<Ejercicio> ejerciciosCliente;
-    //private Ejercicio ejercicios;
-*/
+
     @Column
     private String imagen;
 

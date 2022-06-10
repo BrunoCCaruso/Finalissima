@@ -1,15 +1,12 @@
 package com.hardcode.playgym.entity;
 
-import lombok.Data;
+
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.List;
-
-import static javax.persistence.FetchType.EAGER;
 
 
 @Entity
@@ -21,7 +18,7 @@ public class Admin implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column
+    @Column(name = "admin_id")
     private Long id;
 
     @Column(nullable = false)
@@ -35,15 +32,4 @@ public class Admin implements Serializable {
 
     @Column(nullable = false)
     private String rol = "ADMIN";
-
-    @OneToMany(fetch = EAGER)
-    @JoinColumn(name = "asesores", referencedColumnName = "id", nullable = false)
-    private List<Asesor> asesores;
-    //private Asesor asesores;
-
-   /* @OneToMany(fetch = EAGER)
-    @JoinColumn(name = "clientes", referencedColumnName = "id", nullable = false)
-    private List<Cliente> clientes;
-    //private Cliente clientes;
-*/
 }

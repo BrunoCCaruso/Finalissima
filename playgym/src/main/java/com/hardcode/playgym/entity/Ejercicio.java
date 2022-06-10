@@ -16,7 +16,7 @@ import java.io.Serializable;
 public class Ejercicio implements Serializable {
 
     @Id
-    @Column
+    @Column(name = "ejercicio_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
