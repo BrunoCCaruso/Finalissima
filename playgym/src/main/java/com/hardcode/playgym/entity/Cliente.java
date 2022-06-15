@@ -26,6 +26,7 @@ public class Cliente {
     @Column
     private String alias;
 
+
     @Column(name = "email", length = 60, unique = true, nullable = false)
     private String email;
 
