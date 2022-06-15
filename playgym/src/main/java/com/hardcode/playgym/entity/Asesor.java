@@ -32,9 +32,6 @@ public class Asesor implements Serializable {
     private String contraseña;
 
     @Column(nullable = false)
-    private String rol = "ASESOR";
-
-    @Column(nullable = false)
     private boolean eliminado;
 
     @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})

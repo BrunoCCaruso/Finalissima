@@ -16,7 +16,7 @@ import static javax.persistence.GenerationType.IDENTITY;
 @NoArgsConstructor
 @Entity
 @Table
-public class Cliente {
+public class Cliente{
 
     @Id
     @Column(name = "cliente_id")
@@ -32,9 +32,6 @@ public class Cliente {
 
     @Column(nullable = false)
     private String contrasenia;
-
-    @Column(nullable = false)
-    private String rol = "USUARIO";
 
     @Column(nullable = false)
     private boolean eliminado;
