@@ -1,6 +1,5 @@
 package com.hardcode.playgym.entity;
 
-import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;

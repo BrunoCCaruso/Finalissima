@@ -1,7 +1,10 @@
 package com.hardcode.playgym.service;
 
+
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
-public class ClienteService {
+@RequiredArgsConstructor
+public class ClienteService{
 }
