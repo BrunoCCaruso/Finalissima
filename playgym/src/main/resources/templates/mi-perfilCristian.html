@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    
+    <title>MI PERFIL</title>
+</head>
+<body>
+
+   <!--== Start Header Wrapper ==-->
+   <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand" href="#">Navbar</a>
+    </div>
+  </nav>
+
+    <!--== Start Header Wrapper ==-->
+    <section style="background-color: rgb(82,82,82);">
+        <div class="container">
+      
+          <div class="row">
+            <div class="col-lg-4">
+              <div class="card mb-4">
+                <div class="card-body text-center">
+                  <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"
+                    class="rounded-circle img-fluid" style="width: 150px;">
+                  <h5 class="my-3">John Smith</h5>
+                  <p class="text-muted mb-1">Full Stack Developer</p>
+                  <p class="text-muted mb-1">Bay Area, San Francisco, CA</p>
+                  <div class="d-flex justify-content-center mb-2">
+                    <button type="button" class="btn btn-primary">Follow</button>
+                    <button type="button" class="btn btn-outline-primary ms-1">Message</button>
+                  </div>
+                </div>
+              </div>
+              <div class="card mb-4 mb-lg-0">
+                <div class="card-body p-0">
+                  <ul class="list-group list-group-flush rounded-3">
+                    <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+                      <i class="fas fa-globe fa-lg text-warning"></i>
+                      <p class="mb-0">https://mdbootstrap.com</p>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+                      <i class="fab fa-github fa-lg" style="color: #333333;"></i>
+                      <p class="mb-0">mdbootstrap</p>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+                      <i class="fab fa-twitter fa-lg" style="color: #55acee;"></i>
+                      <p class="mb-0">@mdbootstrap</p>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+                      <i class="fab fa-instagram fa-lg" style="color: #ac2bac;"></i>
+                      <p class="mb-0">mdbootstrap</p>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+                      <i class="fab fa-facebook-f fa-lg" style="color: #3b5998;"></i>
+                      <p class="mb-0">mdbootstrap</p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-8">
+              <div class="card mb-4">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <p class="mb-0">Full Name</p>
+                    </div>
+                    <div class="col-sm-9">
+                      <p class="text-muted mb-0">Johnatan Smith</p>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <p class="mb-0">Email</p>
+                    </div>
+                    <div class="col-sm-9">
+                      <p class="text-muted mb-0">example@example.com</p>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <p class="mb-0">Phone</p>
+                    </div>
+                    <div class="col-sm-9">
+                      <p class="text-muted mb-0">(097) 234-5678</p>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <p class="mb-0">Mobile</p>
+                    </div>
+                    <div class="col-sm-9">
+                      <p class="text-muted mb-0">(098) 765-4321</p>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <p class="mb-0">Address</p>
+                    </div>
+                    <div class="col-sm-9">
+                      <p class="text-muted mb-0">Bay Area, San Francisco, CA</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row ">
+                <div class="col-md-6">
+                  <div class="card mb-4 mb-md-0">
+                    <div class="bg-image card shadow-1-strong"
+                    style="background-image: url('img/imagen-asesor04s.jpg'); background-repeat: no-repeat;">
+                      <div class="card-body">
+                        <!-- modal 1 -->
+                        <button type="button" class="mt-5 btn btn-primary mx-auto d-block" data-bs-toggle="modal" data-bs-target="#miModal">Lista Instructores</button>
+                        <p class="text-body mb-1 text-center">Todos tus Instructores</p>
+                        <p class="text-body mb-4 text-center">se encuentran aqui!</p>
+                        
+                        <div class="modal fade" id="miModal" tabindex="-1" aria-hidden="true" aria-labelledby="modalTitle">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="modalTitle">Ejercicios PlayGym</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <table class="table table-hover">
+                                            <thead>
+                                              <tr>
+                                                <th>#</th>
+                                                <th>Product name</th>
+                                                <th>Price</th>
+                                                <th>Remove</th>
+                                              </tr>
+                                            </thead>
+                                            <tbody>
+                                              <tr>
+                                                <th scope="row">1</th>
+                                                <td>Product 1</td>
+                                                <td>100$</td>
+                                                <td><a><i class="fas fa-times"></i></a></td>
+                                              </tr>
+                                              <tr>
+                                                <th scope="row">2</th>
+                                                <td>Product 2</td>
+                                                <td>100$</td>
+                                                <td><a><i class="fas fa-times"></i></a></td>
+                                              </tr>
+                                              <tr>
+                                                <th scope="row">3</th>
+                                                <td>Product 3</td>
+                                                <td>100$</td>
+                                                <td><a><i class="fas fa-times"></i></a></td>
+                                              </tr>
+                                              <tr>
+                                                <th scope="row">4</th>
+                                                <td>Product 4</td>
+                                                <td>100$</td>
+                                                <td><a><i class="fas fa-times"></i></a></td>
+                                              </tr>
+                                              <tr class="total">
+                                                <th scope="row">5</th>
+                                                <td>Total</td>
+                                                <td>400$</td>
+                                                <td></td>
+                                              </tr>
+                                            </tbody>
+                                          </table>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                        <button type="button" class="btn btn-primary">Aceptar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /modal 1 -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="card mb-4 mb-md-0">
+                    <div class="bg-image card shadow-1-strong"
+                    style="background-image: url('img/imagen-asesor04s.jpg'); background-repeat: no-repeat;">
+                      <div class="card-body">
+                        <!-- modal 1 -->
+                        <button type="button" class="mt-5 btn btn-primary mx-auto d-block" data-bs-toggle="modal" data-bs-target="#miModal">Lista Ejercicios</button>
+                        <p class="text-body mb-1 text-center">Todos tus ejercicios</p>
+                        <p class="text-body mb-4 text-center">se encuentran aqui!</p>
+                        
+                        <div class="modal fade" id="miModal" tabindex="-1" aria-hidden="true" aria-labelledby="modalTitle">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="modalTitle">Ejercicios PlayGym</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <table class="table table-hover">
+                                            <thead>
+                                              <tr>
+                                                <th>#</th>
+                                                <th>Product name</th>
+                                                <th>Price</th>
+                                                <th>Remove</th>
+                                              </tr>
+                                            </thead>
+                                            <tbody>
+                                              <tr>
+                                                <th scope="row">1</th>
+                                                <td>Product 1</td>
+                                                <td>100$</td>
+                                                <td><a><i class="fas fa-times"></i></a></td>
+                                              </tr>
+                                              <tr>
+                                                <th scope="row">2</th>
+                                                <td>Product 2</td>
+                                                <td>100$</td>
+                                                <td><a><i class="fas fa-times"></i></a></td>
+                                              </tr>
+                                              <tr>
+                                                <th scope="row">3</th>
+                                                <td>Product 3</td>
+                                                <td>100$</td>
+                                                <td><a><i class="fas fa-times"></i></a></td>
+                                              </tr>
+                                              <tr>
+                                                <th scope="row">4</th>
+                                                <td>Product 4</td>
+                                                <td>100$</td>
+                                                <td><a><i class="fas fa-times"></i></a></td>
+                                              </tr>
+                                              <tr class="total">
+                                                <th scope="row">5</th>
+                                                <td>Total</td>
+                                                <td>400$</td>
+                                                <td></td>
+                                              </tr>
+                                            </tbody>
+                                          </table>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                        <button type="button" class="btn btn-primary">Aceptar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /modal 1 -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+       <!--== Start Footer Area Wrapper ==-->
+  <!-- Remove the container if you want to extend the Footer to full width. -->
+
+
+  <footer class="bg-dark text-center text-white">
+    <!-- Grid container -->
+    <div class="container p-4 pb-0">
+      <!-- Section: Social media -->
+      <section class="mb-4">
+        <!-- Facebook -->
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+          <i class="fa fa-facebook icon"></i>
+        </a>
+  
+        <!-- Twitter -->
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+          <i class="fa fa-twitter icon"></i>
+        </a>
+  
+        <!-- Google -->
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+          <i class="fa fa-google icon"></i>
+        </a>
+  
+        <!-- Instagram -->
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+          <i class="fa fa-instagram icon"></i>
+        </a>
+  
+        <!-- Linkedin -->
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+          <i class="fa fa-linkedin icon"></i>
+        </a>
+  
+        <!-- Github -->
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+          <i class="fa  fa-github icon"></i>
+        </a>
+      </section>
+      <!-- Section: Social media -->
+    
+    <!-- Grid container -->
+  
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2022 Copyright:
+      <a class="text-white" href="https://mdbootstrap.com/">HardCode Team 7</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+    
+  </div>
+  <!-- End of .container -->
+    <!--== End Footer Area Wrapper ==-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
