@@ -30,6 +30,5 @@ public class Admin implements Serializable {
     @Column(nullable = false)
     private String contraseña;
 
-    //hola soy un comentario.
 
 }

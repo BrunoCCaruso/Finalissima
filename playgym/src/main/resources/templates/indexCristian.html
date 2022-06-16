@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="utf-8">
@@ -65,7 +65,7 @@
               <li><a href="index.html">Inicio</a></li>
               <li><a href="about.html">Nosotros</a></li>
               <li><a href="contact.html">Contacto</a></li> 
-              <li><a href="registro.html">Registro</a></li> 
+              <li><a th:href="@{/auth/registro-roles}">Registro</a></li>
               <li><a class= "btn btn-theme" href="registro-seccion.html">Iniciar Sesion</a></li>
             </ul>
           </div>
