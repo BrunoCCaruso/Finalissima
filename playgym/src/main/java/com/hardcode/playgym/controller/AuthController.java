@@ -26,6 +26,17 @@ public class AuthController {
 
     @GetMapping("/login")
     public ModelAndView login(@RequestParam(required = false) String error, @RequestParam(required = false) String logout, Principal principal) {
+        ModelAndView mav = new ModelAndView("indexCristian");
+
+        if (error != null) mav.addObject("error", "Invalid email or password");
+        if (logout != null) mav.addObject("logout", "You have successfully exited the platform");
+        if (principal != null) mav.setViewName("redirect:/");
+
+        return mav;
+    }
+
+    @GetMapping("/registro-roles")
+    public ModelAndView registroRoles(@RequestParam(required = false) String error, @RequestParam(required = false) String logout, Principal principal) {
         ModelAndView mav = new ModelAndView("registro_roles_alex");
 
         if (error != null) mav.addObject("error", "Invalid email or password");
