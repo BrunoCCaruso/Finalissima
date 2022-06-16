@@ -26,7 +26,7 @@ public class AuthController {
 
     @GetMapping("/login")
     public ModelAndView login(@RequestParam(required = false) String error, @RequestParam(required = false) String logout, Principal principal) {
-        ModelAndView mav = new ModelAndView("login-form");
+        ModelAndView mav = new ModelAndView("registro_roles_alex");
 
         if (error != null) mav.addObject("error", "Invalid email or password");
         if (logout != null) mav.addObject("logout", "You have successfully exited the platform");
@@ -37,7 +37,7 @@ public class AuthController {
 
     @GetMapping("/sign-up/asesor")
     public ModelAndView signup(HttpServletRequest request, Principal principal) {
-        ModelAndView mav = new ModelAndView("sign-up-form-asesor");
+        ModelAndView mav = new ModelAndView("login-registro-asesorCristian");
         Map<String, ?> inputFlashMap = RequestContextUtils.getInputFlashMap(request);
 
         if (principal != null) mav.setViewName("redirect:/");
@@ -56,7 +56,7 @@ public class AuthController {
 
     @GetMapping("/sign-up/cliente")
     public ModelAndView signupCliente(HttpServletRequest request, Principal principal) {
-        ModelAndView mav = new ModelAndView("sign-up-form-cliente");
+        ModelAndView mav = new ModelAndView("login-registro-usuarioCristian");
         Map<String, ?> inputFlashMap = RequestContextUtils.getInputFlashMap(request);
 
         if (principal != null) mav.setViewName("redirect:/");
