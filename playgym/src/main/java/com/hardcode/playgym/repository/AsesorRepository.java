@@ -9,4 +9,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface AsesorRepository extends JpaRepository<Asesor, Long> {
 
+    boolean existsByEmail(String email);
 }

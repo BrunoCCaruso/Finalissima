@@ -1,7 +1,9 @@
 package com.hardcode.playgym.controller;
 
 
+import com.hardcode.playgym.entity.Asesor;
 import com.hardcode.playgym.entity.User;
+import com.hardcode.playgym.service.AsesorService;
 import com.hardcode.playgym.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -24,6 +26,7 @@ import java.util.Map;
 public class AuthController {
 
     private final UserService userService;
+    private final AsesorService asesorService;
 
     @GetMapping("/login")
     public ModelAndView login(@RequestParam(required = false) String error, @RequestParam(required = false) String logout, Principal principal) {
@@ -49,7 +52,7 @@ public class AuthController {
 
     @GetMapping("/sign-up/asesor")
     public ModelAndView signup(HttpServletRequest request, Principal principal) {
-        ModelAndView mav = new ModelAndView("login-registro-asesorCristian");
+        ModelAndView mav = new ModelAndView("registro-asesor");
         Map<String, ?> inputFlashMap = RequestContextUtils.getInputFlashMap(request);
 
         if (principal != null) mav.setViewName("redirect:/");
@@ -68,7 +71,7 @@ public class AuthController {
 
     @GetMapping("/sign-up/cliente")
     public ModelAndView signupCliente(HttpServletRequest request, Principal principal) {
-        ModelAndView mav = new ModelAndView("login-registro-usuarioCristian");
+        ModelAndView mav = new ModelAndView("registro-usuario");
         Map<String, ?> inputFlashMap = RequestContextUtils.getInputFlashMap(request);
 
         if (principal != null) mav.setViewName("redirect:/");
@@ -85,9 +88,18 @@ public class AuthController {
         return mav;
     }
 
+    @GetMapping("/info-asesor")
+    public ModelAndView infoAsesor(HttpServletRequest request, Principal principal) {
+        ModelAndView mav = new ModelAndView("registro-info-asesor");
+        mav.addObject("asesor", new Asesor());
+        return mav;
+    }
+
+
+
     @PostMapping("/register/asesor")
     public RedirectView signupAsesor(User userDto, RedirectAttributes attributes) {
-        RedirectView redirect = new RedirectView("/");
+        RedirectView redirect = new RedirectView("/auth/info-asesor");
 
         try {
             userService.create(userDto);
@@ -99,6 +111,36 @@ public class AuthController {
 
         return redirect;
     }
+
+    @GetMapping("/mi-perfil-asesor")
+    public ModelAndView miPerfilAsesor(HttpServletRequest request, Principal principal) {
+        ModelAndView mav = new ModelAndView("mi-perfil-asesor");
+        return mav;
+    }
+
+
+
+    @PostMapping("/register/asesor-info")
+    public RedirectView signupAsesor(Asesor asesorDto, RedirectAttributes attributes) {
+        RedirectView redirect = new RedirectView("/auth/mi-perfil-asesor");
+
+        try {
+            asesorService.create(asesorDto);
+        } catch (IllegalArgumentException e ) {
+            attributes.addFlashAttribute("user", asesorDto);
+            attributes.addFlashAttribute("exception", e.getMessage());
+            redirect.setUrl("/auth/sign-up");
+        }
+
+        return redirect;
+    }
+
+
+
+
+
+
+
     @PostMapping("/register/cliente")
     public RedirectView signupUsuario(User userDto, RedirectAttributes attributes) {
         RedirectView redirect = new RedirectView("/");
