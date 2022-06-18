@@ -165,7 +165,7 @@ table p {
 .row > [class*=col-] {
   padding-right: 15px;
   padding-left: 15px;
-  padding-top: 29px;
+  padding-top: 9px;
 }
 
 .section-title {
@@ -608,7 +608,7 @@ table p {
   background-color: #e5ba03;
   border-color: #e5ba03;
   border-radius: 15px;
-  color: #fff;
+  color: rgb(0, 0, 0);
   display: inline-block;
   font-size: 15px;
   font-weight: 400;
@@ -643,7 +643,7 @@ a.btn-theme{
 .btn-theme:hover, .btn-theme:focus {
   background-color: #f8f3f0;
   border-color: #f8f3f0;
-  color: #fff;
+  color: rgb(0, 0, 0);
 }
 .btn-theme:hover .icon, .btn-theme:focus .icon {
   right: 40px;
@@ -655,6 +655,7 @@ a.btn-theme{
 .btn-theme.btn-theme-color2:hover, .btn-theme.btn-theme-color2:focus {
   background-color: #e5ba03;
   border-color: #e5ba03;
+  color: black;
 }
 .btn-theme.btn-black {
   background-color: #333;
@@ -663,7 +664,7 @@ a.btn-theme{
 .btn-theme.btn-black:hover {
   background-color: #e5ba03;
   border-color: #e5ba03;
-  color: #fff;
+  color: rgb(0, 0, 0);
 }
 .btn-theme.btn-black.btn-border {
   background-color: transparent;
@@ -673,7 +674,7 @@ a.btn-theme{
 .btn-theme.btn-black.btn-border:hover {
   background-color: #333;
   border-color: #333;
-  color: #fff;
+  color: rgb(0, 0, 0);
 }
 .btn-theme.btn-white {
   background-color: #fff;
@@ -683,12 +684,12 @@ a.btn-theme{
 .btn-theme.btn-white:hover {
   background-color: #000;
   border-color: #000;
-  color: #fff;
+  color: rgb(0, 0, 0);
 }
 .btn-theme.btn-white.btn-border {
   background-color: transparent;
   border-color: #fff;
-  color: #fff;
+  color: rgb(0, 0, 0);
 }
 .btn-theme.btn-white.btn-border:hover {
   background-color: #fff;
@@ -703,7 +704,7 @@ a.btn-theme{
 .btn-theme.btn-gray:hover {
   background-color: #e5ba03;
   border-color: #e5ba03;
-  color: #fff;
+  color: rgb(0, 0, 0);
 }
 .btn-theme.btn-border {
   background-color: transparent;
@@ -714,37 +715,37 @@ a.btn-theme{
 .btn-theme.btn-border:hover {
   background-color: #e5ba03;
   border-color: #e5ba03;
-  color: #fff;
+  color: rgb(0, 0, 0);
 }
 .btn-theme.btn-border.btn-theme-color2 {
   background-color: transparent;
   border-color: #f8f3f0;
-  color: #f8f3f0;
+  color: #000000;
 }
 .btn-theme.btn-border.btn-theme-color2:hover {
   background-color: #f8f3f0;
   border-color: #f8f3f0;
-  color: #fff;
+  color: rgb(0, 0, 0);
 }
 .btn-theme.btn-border.btn-gray {
   background-color: transparent;
   border-color: #e8e8e8;
-  color: #1b1b1b;
+  color: #000000;
 }
 .btn-theme.btn-border.btn-gray:hover {
   background-color: #e5ba03;
   border-color: #e5ba03;
-  color: #fff;
+  color: rgb(0, 0, 0);
 }
 .btn-theme.btn-border.btn-white {
   background-color: transparent;
   border-color: #fff;
-  color: #fff;
+  color: rgb(0, 0, 0);
 }
 .btn-theme.btn-border.btn-white:hover {
   background-color: #e5ba03;
   border-color: #e5ba03;
-  color: #fff;
+  color: rgb(0, 0, 0);
 }
 .btn-theme.btn-round {
   border-radius: 25px;
@@ -836,7 +837,7 @@ a.btn-theme{
   -o-transition: 0.3s;
 }
 .btn-theme.btn-hover-style:hover {
-  color: #fff;
+  color: rgb(0, 0, 0);
 }
 .btn-theme.btn-hover-style:hover:before {
   transform: scaleY(1);
@@ -848,7 +849,7 @@ a.btn-theme{
 .btn-theme.btn-hover-style-bg {
   background-color: #e5ba03;
   border: 1px solid #e5ba03;
-  color: #fff;
+  color: rgb(0, 0, 0);
   position: relative;
   z-index: 1;
 }
@@ -873,7 +874,7 @@ a.btn-theme{
   -o-transition: 0.3s;
 }
 .btn-theme.btn-hover-style-bg:hover {
-  color: #fff;
+  color: rgb(0, 0, 0);
 }
 .btn-theme.btn-hover-style-bg:hover:before {
   transform: scaleY(1);
@@ -945,7 +946,7 @@ a.btn-theme{
 }
 .btn-border:hover {
   background-color: #e5ba03;
-  color: #fff;
+  color: rgb(0, 0, 0);
 }
 
 .btn-link {
@@ -4449,7 +4450,7 @@ a.btn-theme{
   }
 }
 .home-slider-area.slider-default .slider-content-area .content .inner-content .btn-theme {
-  /*background-color: transparent;*/
+  background-color: transparent;
   border: 1px solid #e1e1e1;
   border-radius: 27.5px;
   color: #e0e0e0;
@@ -5538,7 +5539,7 @@ a.btn-theme{
   }
 }
 .gallery-area.gallery-default-area .btn-theme {
-  /*background-color: transparent;*/
+  background-color: transparent;
   border: 1px solid #e5ba03;
   border-radius: 25.5px;
   color: #000;
@@ -9319,7 +9320,7 @@ a.btn-theme{
 .account-login-area .login-top .login-form-nav .nav-tabs .nav-link.active {
   border: none;
   background: none;
-  color: #333;
+  color: #fff;
   cursor: default;
   font-size: 24px;
   font-weight: 500;

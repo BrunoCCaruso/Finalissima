@@ -17,7 +17,7 @@
     <link href="https://fonts.googleapis.com/css?family=Exo:400" rel="stylesheet">
 
      <!--== Bootstrap CSS ==-->
-     <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet"/>
+     <link th:href="@{/css/bootstrap.min-login.css}" rel="stylesheet"/>
      <!--== Font-awesome Icons CSS ==-->
      <link th:href="@{/css/font-awesome.min.css}" rel="stylesheet"/>
      <!--== Pe Icon 7 Min Icons CSS ==-->
@@ -35,9 +35,11 @@
      <!--== Slick CSS ==-->
      <link th:href="@{/css/slick.css}" rel="stylesheet"/>
      <!--== Main Style CSS ==-->
-     <link th:href="@{/css/style.css}" rel="stylesheet" />
+     <link th:href="@{/css/style-login.css}" rel="stylesheet" />
 
-    <link rel="stylesheet" th:href="@{/css/registro_instructors.css}">
+     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet" type="text/css"/>
+
+    <!--<link rel="stylesheet" th:href="@{/css/registro_instructors.css}">-->
 
 </head>
 
@@ -54,7 +56,7 @@
       <div class="col-4 col-xs-3 col-sm-3 col-md-3 col-xl-3">
         <div class="header-logo-area">
           <a href="index.html">
-            <img class="logo-main" th:src="@{/img/playgymregister.png}" alt="Logo" /> 
+            <img class="logo-main" th:src="@{/img/playgymregister.png}" alt="Logo"/> 
           </a>
         </div>
       </div>  
@@ -63,10 +65,69 @@
 </header>
 <!--== End Header Wrapper ==-->
   
+
+  
+  
+  
+  <div class="account-login-area">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-7 m-auto">
+            <div class="login-top">
+              <nav class="login-form-nav">
+                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                  <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Registro</button>   
+                </div>
+              </nav>
+            </div>
+            <div class="login-bottom">
+              <div class="login-form-content tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                  <div class="login-form">
+
+                    <form class="login-form-wrapper needs-validation mb-4" id="login-form" th:action="@{/auth/register/cliente}" th:object="${user}" method="post" autocomplete="off" novalidate>
+                      <div class="row">
+                        <div class="col-lg-12">
+                          <div class="row">
+                            <div class="col-md-12">
+                              <div class="form-group">
+                                <label for="UserName" class="form-label">Correo electronico *</label>
+                                <input type="email" th:field="*{email}" placeholder="Email" class="form-control" id="UserName" required>
+                                <div class="invalid-feedback text-start">Email es requerido</div>
+                              </div>
+                            </div>
+                            <div class="col-md-12">
+                              <div class="form-group mb-0">
+                                <label for="password" class="form-label mt-15">Contraseña *</label>
+                                <input type="password" th:field="*{password}" placeholder="Password" class="form-control" id="password" required>
+                                <div class="invalid-feedback text-start">Password is required</div>
+                              </div>
+                            </div>
+                            <input type="text" th:field="*{role}" hidden>
+                            <div class="col-md-12">
+                              <div class="form-group form-group-info">
+                                <button class="btn btn-theme btn-black" type="submit">Registrarse</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </form>
+                  </div> 
+                  <div class="form-message"></div>
+                </div>  
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </main>
   
   
 
-    <!--== Start Contact Area ==-->
+    <!--
     <div class="account-login-area">
       <div class="container">
         <div class="row">
@@ -105,7 +166,7 @@
                       <div class="form-group d-grid gap-2">
                         <button class="btn btn-success" type="submit">Send</button>
                       </div>
-                    </form>
+                    </form> ------------------------>
 
                     <!--
                     <form class="login-form-wrapper needs-validation mb-4" id="login-form" th:action="@{/auth/register/cliente}" th:object="${user}" method="post" autocomplete="off"
@@ -187,32 +248,32 @@
       <section class="mb-4">
         <!-- Facebook -->
         <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
-          <i class="fa fa-facebook icon"></i>
+          <i class="fab fa-facebook-f"></i>
         </a>
   
         <!-- Twitter -->
         <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
-          <i class="fa fa-twitter icon"></i>
+          <i class="fab fa-twitter"></i>
         </a>
   
         <!-- Google -->
         <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
-          <i class="fa fa-google icon"></i>
+          <i class="fab fa-google"></i>
         </a>
   
         <!-- Instagram -->
         <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
-          <i class="fa fa-instagram icon"></i>
+          <i class="fab fa-instagram"></i>
         </a>
   
         <!-- Linkedin -->
         <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
-          <i class="fa fa-linkedin icon"></i>
+          <i class="fab fa-linkedin-in"></i>
         </a>
   
         <!-- Github -->
         <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
-          <i class="fa  fa-github icon"></i>
+          <i class="fab fa-github"></i>
         </a>
       </section>
       <!-- Section: Social media -->
