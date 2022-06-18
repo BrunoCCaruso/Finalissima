@@ -62,9 +62,9 @@
         <div class="header-align">
           <div class="header-navigation-area d-none d-xl-block">
             <ul class="main-menu nav position-relative">
-              <li><a href="index.html">Inicio</a></li>
-              <li><a href="about.html">Nosotros</a></li>
-              <li><a href="contact.html">Contacto</a></li> 
+              <li><a href="#inicio">Inicio</a></li>
+              <li><a href="#contacto">Nosotros</a></li>
+              <li><a href="#contacto">Contacto</a></li> 
               <li><a th:href="@{/auth/registro-roles}">Registro</a></li>
               <li><a class= "btn btn-theme" href="registro-seccion.html">Iniciar Sesion</a></li>
             </ul>
@@ -80,7 +80,7 @@
 </header>
 <!--== End Header Wrapper ==-->
   
-  <main class="main-content">
+  <main id="inicio" class="main-content">
     <!--== Start Hero Area Wrapper ==-->
     <section class="home-slider-area slider-default">
       <div class="home-slider-content">
@@ -378,7 +378,7 @@
   </main>
 
    <!--== Start Contact Area ==-->
-   <section class="contact-area position-relative">
+   <section id="contacto" class="contact-area position-relative">
     <div class="contact-page-wrap">
       <div class="container">
         <div class="row">
