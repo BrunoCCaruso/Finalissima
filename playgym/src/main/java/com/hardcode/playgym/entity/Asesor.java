@@ -28,10 +28,10 @@ public class Asesor implements Serializable {
     @Column(nullable = false)
     private String email;
 
-    @Column(nullable = false)
+    @Column()
     private String contraseña;
 
-    @Column(nullable = false)
+    @Column()
     private boolean eliminado;
 
     @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
@@ -40,7 +40,11 @@ public class Asesor implements Serializable {
     @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private List<Cliente> clientes;
 
-    @Column(nullable = false)
+    @Column()
     private String imagen;
+
+    @Column(nullable = false)
+    private String rol;
+
 
 }
