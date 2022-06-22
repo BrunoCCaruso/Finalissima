@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
 
@@ -6,38 +7,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Registro de Instructores - PlayGym - Gym & Fitness</title>
+    <title>Registro Usuario - PlayGym - Gym & Fitness</title>
 
     <!--== Favicon ==-->
-    <link rel="shortcut icon" th:href="@{/img/logo_playgym.png}" type="image/x-icon" />
+    <link rel="shortcut icon" th:href="@{cristian/img/logo_playgym.png}" type="image/x-icon" />
 
     <!--== Google Fonts ==-->
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,500i,700,900,900i" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Oswald:200,400,500,600,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Exo:400" rel="stylesheet">
 
-    <!--== Bootstrap CSS ==-->
-    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet"/>
-    <!--== Font-awesome Icons CSS ==-->
-    <link th:href="@{/css/font-awesome.min.css}" rel="stylesheet"/>
-    <!--== Pe Icon 7 Min Icons CSS ==-->
-    <link th:href="@{/css/pe-icon-7-stroke.min.css}" rel="stylesheet"/>
-    <!--== Animate CSS ==-->
-    <link th:href="@{/css/animate.css}" rel="stylesheet"/>
-    <!--== Aos CSS ==-->
-    <link th:href="@{/css/aos.css}" rel="stylesheet"/>
-    <!--== FancyBox CSS ==-->
-    <link th:href="@{/css/jquery.fancybox.min.css}" rel="stylesheet"/>
-    <!--== Slicknav CSS ==-->
-    <link th:href="@{/css/slicknav.css}" rel="stylesheet"/>
-    <!--== Swiper CSS ==-->
-    <link th:href="@{/css/swiper.min.css}" rel="stylesheet"/>
-    <!--== Slick CSS ==-->
-    <link th:href="@{/css/slick.css}" rel="stylesheet"/>
-    <!--== Main Style CSS ==-->
-    <link th:href="@{/css/style.css}" rel="stylesheet" />
+     <!--== Bootstrap CSS ==-->
+     <link th:href="@{/css/bootstrap.min-login.css}" rel="stylesheet"/>
+     <!--== Font-awesome Icons CSS ==-->
+     <link th:href="@{/css/font-awesome.min.css}" rel="stylesheet"/>
+     <!--== Pe Icon 7 Min Icons CSS ==-->
+     <link th:href="@{/css/pe-icon-7-stroke.min.css}" rel="stylesheet"/>
+     <!--== Animate CSS ==-->
+     <link th:href="@{/css/animate.css}" rel="stylesheet"/>
+     <!--== Aos CSS ==-->
+     <link th:href="@{/css/aos.css}" rel="stylesheet"/>
+     <!--== FancyBox CSS ==-->
+     <link th:href="@{/css/jquery.fancybox.min.css}" rel="stylesheet"/>
+     <!--== Slicknav CSS ==-->
+     <link th:href="@{/css/slicknav.css}" rel="stylesheet"/>
+     <!--== Swiper CSS ==-->
+     <link th:href="@{/css/swiper.min.css}" rel="stylesheet"/>
+     <!--== Slick CSS ==-->
+     <link th:href="@{/css/slick.css}" rel="stylesheet"/>
+     <!--== Main Style CSS ==-->
+     <link th:href="@{/css/style-login.css}" rel="stylesheet" />
 
-   <link rel="stylesheet" th:href="@{/css/registro_instructors.css}">
+     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet" type="text/css"/>
+
+    <!--<link rel="stylesheet" th:href="@{/css/registro_instructors.css}">-->
 
 </head>
 
@@ -54,7 +57,7 @@
       <div class="col-4 col-xs-3 col-sm-3 col-md-3 col-xl-3">
         <div class="header-logo-area">
           <a href="index.html">
-            <img class="logo-main" th:src="@{/img/playgymregister.png}" alt="Logo" /> 
+            <img class="logo-main" th:src="@{/img/playgymregister.png}" alt="Logo"/> 
           </a>
         </div>
       </div>  
@@ -63,10 +66,69 @@
 </header>
 <!--== End Header Wrapper ==-->
   
+
+  
+  
+  
+  <div class="account-login-area">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-7 m-auto">
+            <div class="login-top">
+              <nav class="login-form-nav">
+                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                  <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Registro Instructor  1/2</button>   
+                </div>
+              </nav>
+            </div>
+            <div class="login-bottom">
+              <div class="login-form-content tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                  <div class="login-form">
+
+                    <form class="login-form-wrapper needs-validation mb-4" id="login-form" th:action="@{/auth/register/asesor}" th:object="${user}" method="post" autocomplete="off" novalidate>
+                      <div class="row">
+                        <div class="col-lg-12">
+                          <div class="row">
+                            <div class="col-md-12">
+                              <div class="form-group">
+                                <label for="UserName" class="form-label">Correo electronico *</label>
+                                <input type="email" th:field="*{email}" placeholder="Email" class="form-control" id="UserName" required>
+                                <div class="invalid-feedback text-start">Email es requerido</div>
+                              </div>
+                            </div>
+                            <div class="col-md-12">
+                              <div class="form-group mb-0">
+                                <label for="password" class="form-label mt-15">Contraseña *</label>
+                                <input type="password" th:field="*{password}" placeholder="Password" class="form-control" id="password" required>
+                                <div class="invalid-feedback text-start">Contraseña es requerido</div>
+                              </div>
+                            </div>
+                            <input type="text" th:field="*{role}" hidden>
+                            <div class="col-md-12">
+                              <div class="form-group form-group-info">
+                                <button class="btn btn-theme btn-black" type="submit">Registrarse</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </form>
+                  </div> 
+                  <div class="form-message"></div>
+                </div>  
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </main>
   
   
 
-    <!--== Start Contact Area ==-->
+    <!--
     <div class="account-login-area">
       <div class="container">
         <div class="row">
@@ -81,9 +143,11 @@
             <div class="login-bottom">
               <div class="login-form-content tab-content" id="nav-tabContent">
                 <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                  <div class="login-form d-inline">
+                  <div class="login-form">
 
-                    <form th:action="@{/auth/register/asesor}" th:object="${user}" method="post" autocomplete="off"
+
+
+                    <form th:action="@{/auth/register/cliente}" th:object="${user}" method="post" autocomplete="off"
                           class="needs-validation mb-4" novalidate>
 
                       <div class="form-group mb-3">
@@ -103,75 +167,63 @@
                       <div class="form-group d-grid gap-2">
                         <button class="btn btn-success" type="submit">Send</button>
                       </div>
-                    </form>
+                    </form> ------------------------>
 
-                   <!--
-                     <form class="login-form-wrapper" id="login-form" action="http://whizthemes.com/mail-php/raju/arden/mail.php" method="post">
-                       <div class="row">
-                         <div class="col-lg-12">
-                           <div class="row">
-                             <div class="col-md-12">
-                               <div class="form-group">
-                                 <label for="RegUserName" class="form-label">Usuario *</label>
-                                 <input type="email" class="form-control" id="RegUserName">
-                               </div>
-                             </div>
-                             <div class="col-md-12">
-                               <div class="form-group">
-                                 <label for="regemail" class="form-label mt-15">Correo electronico *</label>
-                                 <input type="email" class="form-control" id="regemail">
-                               </div>
-                             </div>
-                             <div class="col-md-12">
-                               <div class="form-group mb-0">
-                                 <label for="regpassword" class="form-label mt-15">Contraseña *</label>
-                                 <input type="password" class="form-control" id="regpassword">
-                               </div>
-                             </div>
-                             <div class="container">
-                               <div class="grid-wrapper grid-col-auto">
-                                 <label for="radio-card-1" class="radio-card">
-                                   <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                                   <div class="card-content-wrapper">
-                                     <span class="check-icon"></span>
-                                     <div class="card-content">
-                                       <img th:src="@{/img/tren1.png}" alt=""/>
-                                       <h4>TREN INFERIOR</h4>
-
-                                     </div>
-                                   </div>
-                                 </label>
-                                 /.radio-card -->
                     <!--
-                              <label for="radio-card-2" class="radio-card">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option2">
-                                <div class="card-content-wrapper">
-                                  <span class="check-icon"></span>
-                                  <div class="card-content">
-                                    <img
-                                      th:src="@{/img/tren2.png}"
-                                      alt=""
-                                    />
-                                    <h4>TREN SUPERIOR</h4>
-                                  </div>
-                                </div>
-                              </label>
-                         /.radio-card -->
-                    <!--      </div>
-                         /.grid-wrapper -->
-                    <!--    </div>
-                         /.container -->
-                    <!--    <div class="col-md-12">
-                          <div class="form-group mb-0 form-group-info">
-                            <button class="btn btn-theme btn-black" type="button">Registrarse</button>
+                    <form class="login-form-wrapper needs-validation mb-4" id="login-form" th:action="@{/auth/register/cliente}" th:object="${user}" method="post" autocomplete="off"
+                          novalidate>
+                      <div class="row">
+                        <div class="col-lg-12">
+                          <div class="row">
+                            <div class="col-md-12">
+                              <div class="form-group">
+                                <label for="RegUserName" class="form-label">Usuario *</label>
+                                <input type="email" class="form-control" id="RegUserName">
+                              </div>
+                            </div>
+                            <div class="col-md-12">
+                              <div class="form-group">
+                                <label for="regemail" class="form-label mt-15">Correo electronico *</label>
+                                <input type="email" class="form-control" id="regemail">
+                              </div>
+                            </div>
+                            <div class="col-md-12">
+                              <div class="form-group mb-0">
+                                <label for="regpassword" class="form-label mt-15">Contraseña *</label>
+                                <input type="password" class="form-control" id="regpassword">
+                              </div>
+                            </div>
+                            <div class="col-md-12">
+                              <div class="form-group">
+                                <label for="exampleFormControlSelect1">Edad</label>
+                                <select class="form-control" id="exampleFormControlSelect1">
+                                  <option>16</option>
+                                  <option>17</option>
+                                  <option>18</option>
+                                  <option>20</option>
+                                  <option>21</option>
+                                </select>
+                              </div>
+                            </div>
+                            <div class="col-md-12">
+                              <div class="form-group">
+                                <input type="number" placeholder="Altura" required=""  min="10" max="100">
+                              </div>
+                            </div> 
+                            <div class="col-md-12">
+                              <div class="form-group">
+                                <input type="number" placeholder="Peso" required="" >
+                              </div>
+                            </div>
+                            <div class="col-md-12">
+                              <div class="form-group mb-0 form-group-info">
+                                <button class="btn btn-theme btn-black" type="button">Registrarse</button>
+                              </div>
+                            </div> 
                           </div>
                         </div>
                       </div>
-                    </div>
-                  </div>
-                </form>
-                        -->
-
+                    </form> -->
                   </div>
                   <!-- Message Notification -->
                   <div class="form-message"></div>
@@ -197,32 +249,32 @@
       <section class="mb-4">
         <!-- Facebook -->
         <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
-          <i class="fa fa-facebook icon"></i>
+          <i class="fab fa-facebook-f"></i>
         </a>
   
         <!-- Twitter -->
         <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
-          <i class="fa fa-twitter icon"></i>
+          <i class="fab fa-twitter"></i>
         </a>
   
         <!-- Google -->
         <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
-          <i class="fa fa-google icon"></i>
+          <i class="fab fa-google"></i>
         </a>
   
         <!-- Instagram -->
         <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
-          <i class="fa fa-instagram icon"></i>
+          <i class="fab fa-instagram"></i>
         </a>
   
         <!-- Linkedin -->
         <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
-          <i class="fa fa-linkedin icon"></i>
+          <i class="fab fa-linkedin-in"></i>
         </a>
   
         <!-- Github -->
         <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
-          <i class="fa  fa-github icon"></i>
+          <i class="fab fa-github"></i>
         </a>
       </section>
       <!-- Section: Social media -->
