@@ -5,8 +5,48 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PlayGym Entramientos Personalizados</title>
+    <link th:href="@{/css/bootstrap.min-index.css}" rel="stylesheet"/>
+    <link th:href="@{/css/style.css}" rel="stylesheet" />
 </head>
 <body>
+<header class="header-area header-default header-transparent header-style sticky-header">
+    <div class="container">
+        <div class="row row-gutter-0 align-items-center">
+            <div class="col-4 col-xs-3 col-sm-3 col-md-3 col-xl-3">
+                <div class="header-logo-area">
+                    <a href="index.html">
+                        <img class="logo-main" th:src="@{/img/logo_playgym.png}" alt="Logo" />
+
+                    </a>
+                </div>
+            </div>
+            <div class="col-8 col-sm-9 col-xl-9">
+                <div class="header-align">
+                    <div class="header-navigation-area d-none d-xl-block">
+                        <ul class="main-menu nav position-relative">
+
+                            <li sec:authorize="hasRole('ADMIN')" class="nav-item">
+                                <a th:href="@{/auth/mi-perfil-admin}" class="nav-link text-white" >Mi perfil</a>
+                            </li>
+                            <li sec:authorize="hasRole('ASESOR')" class="nav-item">
+                                <a th:href="@{/auth/mi-perfil-asesor}" class="nav-link text-white" >Mi perfil</a>
+                            </li>
+                            <li sec:authorize="hasRole('CLIENTE')" class="nav-item">
+                                <a th:href="@{/auth/mi-perfil-cliente}" class="nav-link text-white" >Mi perfil</a>
+                            </li>
+
+                            <li><a class= "btn btn-theme" th:href="@{/logout}">Cerrar Sesion</a></li>
+                        </ul>
+                    </div>
+                    <div class="header-action-area">
+                        <button class="btn-menu d-xl-none">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+</header>
     Mi perfil admin
 </body>
 </html>

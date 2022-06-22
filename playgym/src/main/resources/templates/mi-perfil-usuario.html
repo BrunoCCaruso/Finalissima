@@ -6,9 +6,11 @@
     <meta name="keywords" content="">
     <meta name="description" content="">
     <title>Perfil-usuario</title>
+    <link th:href="@{/css/bootstrap.min-index.css}" rel="stylesheet"/>
     <link rel="stylesheet" th:href="@{/css/nicepage.css}" media="screen">
-    <link rel="stylesheet" th:href="@{/css/Perfil-usuario.css" media="screen">
-    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css">
+    <link rel="stylesheet" th:href="@{/css/Perfil-usuario.css}" media="screen">
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <link th:href="@{/css/style.css}" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet" type="text/css"/>
     <script class="u-script" type="text/javascript" th:src="@{/js/jquery.js}" defer=""></script>
     <script class="u-script" type="text/javascript" th:src="@{/js/nicepage.js}" defer=""></script>
@@ -22,29 +24,62 @@
 		"@context": "http://schema.org",
 		"@type": "Organization",
 		"name": "PLAYGYM"
-}</script>
+    }</script>
+
     <meta name="theme-color" content="#478ac9">
     <meta property="og:title" content="Perfil-usuario">
     <meta property="og:description" content="">
     <meta property="og:type" content="website">
   </head>
-  <body class="u-body u-grey-25 u-xl-mode">
 
-    <!--== Start Header Wrapper ==-->
-    
-    <nav class="navbar">
-      <div class="container d-flex justify-content-center">
-        <a class="navbar-brand" href="#">
-          <img th:src="@{/img/playgymregisterroles.png}" alt="" width="150" height="100">
-        </a>
-        <a class="cerrarSesion" href="">Cerrar Sesion</a>
-      </div>
-    </nav>
-    <!--== End Header Wrapper ==-->
 
+  <body class="u-body bg-dark u-xl-mode">
+
+  <div class="wrapper home-default-wrapper">
+  <header class="header-area header-default header-transparent header-style sticky-header">
+      <div class="container">
+          <div class="row row-gutter-0 align-items-center">
+              <div class="col-4 col-xs-3 col-sm-3 col-md-3 col-xl-3">
+                  <div class="header-logo-area">
+                      <a href="index.html">
+                          <img class="logo-main" th:src="@{/img/logo_playgym.png}" alt="Logo" />
+
+                      </a>
+                  </div>
+              </div>
+              <div class="col-8 col-sm-9 col-xl-9">
+                  <div class="header-align">
+                      <div class="header-navigation-area d-none d-xl-block">
+                          <ul class="main-menu nav position-relative">
+
+                              <li><a class="nav-link text-white" th:href="@{/auth/ejercicios}">Sección ejercicios</a></li>
+
+                              <li sec:authorize="hasRole('ADMIN')" class="nav-item">
+                                  <a th:href="@{/auth/mi-perfil-admin}" class="nav-link text-white" >Mi perfil</a>
+                              </li>
+                              <li sec:authorize="hasRole('ASESOR')" class="nav-item">
+                                  <a th:href="@{/auth/mi-perfil-asesor}" class="nav-link text-white" >Mi perfil</a>
+                              </li>
+                              <li sec:authorize="hasRole('CLIENTE')" class="nav-item">
+                                  <a th:href="@{/auth/mi-perfil-cliente}" class="nav-link text-white" >Mi perfil</a>
+                              </li>
+
+                              <li><a class= "btn btn-theme" th:href="@{/logout}">Cerrar Sesion</a></li>
+                          </ul>
+                      </div>
+                      <div class="header-action-area">
+                          <button class="btn-menu d-xl-none">
+                              <i class="fa fa-bars"></i>
+                          </button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+  </header>
+</div>
+<div class="contenedor-general">
     <section class="u-align-center u-clearfix u-image u-section-1" id="carousel_ef9a" data-image-width="1980" data-image-height="1320">
       <div class="u-clearfix u-sheet u-valign-bottom-sm u-valign-bottom-xs u-sheet-1">
-        <h2 class="u-text u-text-1">BIENVENIDO</h2>
         <div class="u-clearfix u-expanded-width-xs u-gutter-24 u-layout-wrap u-layout-wrap-1">
           <div class="u-gutter-0 u-layout">
             <div class="u-layout-row">
@@ -174,7 +209,13 @@
   <!--== End Footer Area Wrapper ==-->
     
     
-    <style> .u-dialog-section-4 {
+    <style>
+    .contenedor-general{
+  margin-top: 70px;
+}
+
+
+    .u-dialog-section-4 {
   min-height: 826px;
 }
 
@@ -259,5 +300,8 @@
     margin-top: 24px;
     margin-right: 0;
   }
-}</style></body>
+}</style>
+</div>
+
+  </body>
 </html>

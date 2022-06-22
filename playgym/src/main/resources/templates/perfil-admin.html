@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>Perfil Admin</title>
+    <link rel="stylesheet" th:href="@{/css/nicepage-admin.css}" media="screen">
+<link rel="stylesheet" th:href="@{/css/Perfil-Admin.css}" media="screen">
+    <script class="u-script" type="text/javascript" th:src="@{/js/jquery.js}" defer=""></script>
+    <script class="u-script" type="text/javascript" th:src="@{/js/nicepage-admin.js}" defer=""></script>
+    <meta name="generator" content="Nicepage 4.12.21, nicepage.com">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+    <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|PT+Sans+Caption:400,700">
+    
+    
+    
+    
+    
+    <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": "PLAYGYM"
+}</script>
+    <meta name="theme-color" content="#478ac9">
+    <meta property="og:title" content="Perfil Admin">
+    <meta property="og:description" content="">
+    <meta property="og:type" content="website">
+  </head>
+  <body class="u-body bg-dark u-xl-mode">
+  <div class="wrapper home-default-wrapper">
+    <header class="header-area header-default header-transparent header-style sticky-header">
+      <div class="container">
+        <div class="row row-gutter-0 align-items-center">
+          <div class="col-4 col-xs-3 col-sm-3 col-md-3 col-xl-3">
+            <div class="header-logo-area">
+              <a href="index.html">
+                <img class="logo-main" th:src="@{/img/logo_playgym.png}" alt="Logo" />
+
+              </a>
+            </div>
+          </div>
+          <div class="col-8 col-sm-9 col-xl-9">
+            <div class="header-align">
+              <div class="header-navigation-area d-none d-xl-block">
+                <ul class="main-menu nav position-relative">
+
+                  <li><a class="nav-link text-white" th:href="@{/auth/ejercicios}">Sección ejercicios</a></li>
+
+                  <li sec:authorize="hasRole('ADMIN')" class="nav-item">
+                    <a th:href="@{/auth/mi-perfil-admin}" class="nav-link text-white" >Mi perfil</a>
+                  </li>
+                  <li sec:authorize="hasRole('ASESOR')" class="nav-item">
+                    <a th:href="@{/auth/mi-perfil-asesor}" class="nav-link text-white" >Mi perfil</a>
+                  </li>
+                  <li sec:authorize="hasRole('CLIENTE')" class="nav-item">
+                    <a th:href="@{/auth/mi-perfil-cliente}" class="nav-link text-white" >Mi perfil</a>
+                  </li>
+
+                  <li><a class= "btn btn-theme" th:href="@{/logout}">Cerrar Sesion</a></li>
+                </ul>
+              </div>
+              <div class="header-action-area">
+                <button class="btn-menu d-xl-none">
+                  <i class="fa fa-bars"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+    </header>
+  </div>
+
+
+
+
+
+    <section class="u-align-center u-clearfix u-image u-section-1" id="carousel_ef9a" data-image-width="1980" data-image-height="1320">
+      <div class="u-clearfix u-sheet u-valign-bottom-sm u-sheet-1">
+        <img class="u-image u-image-default u-image-1" src="images/319a217d9df637d6baee7dec94a934b6.png" alt="" data-image-width="981" data-image-height="958">
+        <img class="u-image u-image-default u-image-2" src="images/logo_playgym.png" alt="" data-image-width="772" data-image-height="1299">
+        <h2 class="u-text u-text-1">BIENVENIDO, ADMIN</h2>
+        <div class="u-clearfix u-gutter-24 u-layout-wrap u-layout-wrap-1">
+          <div class="u-gutter-0 u-layout">
+            <div class="u-layout-row">
+              <div class="u-align-left u-container-style u-image u-layout-cell u-size-31 u-image-3" data-image-width="1280" data-image-height="850">
+                <div class="u-container-layout u-container-layout-1">
+                  <a href="#carousel_2720" class="u-border-none u-btn u-button-style u-dialog-link u-hover-feature u-palette-3-light-1 u-text-black u-btn-1">LISTA DE USUARIOS</a>
+                  <a href="#carousel_5710" class="u-btn u-button-style u-dialog-link u-hover-feature u-palette-3-light-1 u-text-body-color u-btn-2">LISTA DE EJERCICIOS</a>
+                  <a href="#sec-b774" class="u-border-none u-btn u-button-style u-dialog-link u-hover-feature u-palette-3-light-1 u-text-black u-btn-3">LISTA DE ASESORES</a>
+                </div>
+              </div>
+              <div class="u-container-style u-gradient u-layout-cell u-size-29 u-layout-cell-2">
+                <div class="u-container-layout u-container-layout-2">
+                  <div class="u-image u-image-circle u-preserve-proportions u-image-4" alt="" data-image-width="700" data-image-height="774"></div>
+                  <h3 class="u-align-center u-custom-font u-text u-text-2">Mi perfil<br>
+                  </h3>
+                  <p class="u-text u-text-3">
+                    <span style="font-weight: 700;">Nombre: ADMIN</span>
+                    <br>
+                    <span style="font-weight: 700;">RANGO:ADMINISTRADOR&nbsp;</span>
+                    <span style="font-weight: 700;">
+                      <br>E-mail: admin@admin.com
+                    </span>
+                    <br>
+                    <br>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      
+      
+    </section>
+    
+    
+    
+    
+    
+    
+    <section class="u-backlink u-clearfix u-grey-80">
+      <a class="u-link" href="https://nicepage.com/website-design" target="_blank">
+        <span>Website Design</span>
+      </a>
+      <p class="u-text">
+        <span>created with</span>
+      </p>
+      <a class="u-link" href="https://nicepage.one" target="_blank">
+        <span>Website Builder</span>
+      </a>. 
+    </section>
+  <section class="u-align-center u-black u-clearfix u-container-style u-dialog-block u-opacity u-opacity-70 u-dialog-section-4" id="sec-b774">
+      <div class="u-align-left u-container-style u-dialog u-white u-dialog-1">
+        <div class="u-container-layout u-valign-bottom u-container-layout-1">
+          <div class="u-expanded-width u-table u-table-responsive u-table-1">
+            <table class="u-table-entity">
+              <colgroup>
+                <col width="10.7%">
+                <col width="22.5%">
+                <col width="17%">
+                <col width="16.6%">
+                <col width="16.6%">
+                <col width="16.6%">
+              </colgroup>
+              <thead class="u-black u-table-header u-table-header-1">
+                <tr style="height: 73px;">
+                  <th class="u-border-1 u-border-black u-table-cell">&nbsp; &nbsp; &nbsp; &nbsp; ID</th>
+                  <th class="u-border-1 u-border-black u-table-cell">&nbsp; &nbsp; &nbsp; &nbsp; NOMBRE</th>
+                  <th class="u-border-1 u-border-black u-table-cell">&nbsp; &nbsp;APELLIDO</th>
+                  <th class="u-border-1 u-border-black u-table-cell">&nbsp; &nbsp; &nbsp; &nbsp;TREN&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; SUPERIOR</th>
+                  <th class="u-border-1 u-border-black u-table-cell">&nbsp; &nbsp; &nbsp; &nbsp; TREN&nbsp;<br>&nbsp; &nbsp; INFERIOR
+                  </th>
+                  <th class="u-border-1 u-border-black u-table-cell">&nbsp; USUARIOS</th>
+                </tr>
+              </thead>
+              <tbody class="u-table-body">
+                <tr style="height: 78px;">
+                  <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
+                  <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
+                  <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
+                  <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
+                  <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
+                  <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
+                </tr>
+                <tr style="height: 79px;">
+                  <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
+                  <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
+                  <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
+                  <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
+                  <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
+                  <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
+                </tr>
+                <tr style="height: 79px;">
+                  <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
+                  <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
+                  <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
+                  <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
+                  <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
+                  <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
+                </tr>
+                <tr style="height: 79px;">
+                  <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
+                  <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
+                  <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
+                  <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
+                  <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
+                  <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div><button class="u-dialog-close-button u-icon u-text-grey-50 u-icon-1"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 413.348 413.348" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-5801"></use></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xml:space="preserve" class="u-svg-content" viewBox="0 0 413.348 413.348" id="svg-5801"><path d="m413.348 24.354-24.354-24.354-182.32 182.32-182.32-182.32-24.354 24.354 182.32 182.32-182.32 182.32 24.354 24.354 182.32-182.32 182.32 182.32 24.354-24.354-182.32-182.32z"></path></svg></button>
+      </div>
+    </section><style> .u-dialog-section-4 {
+  min-height: 826px;
+}
+
+.u-dialog-section-4 .u-dialog-1 {
+  width: 921px;
+  min-height: 470px;
+  margin: 178px auto;
+}
+
+.u-dialog-section-4 .u-container-layout-1 {
+  padding: 40px 30px;
+}
+
+.u-dialog-section-4 .u-table-1 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.u-dialog-section-4 .u-table-header-1 {
+  font-weight: 700;
+  background-image: none;
+}
+
+.u-dialog-section-4 .u-icon-1 {
+  width: 15px;
+  height: 15px;
+  left: auto;
+  top: 17px;
+  position: absolute;
+  right: 16px;
+}
+
+@media (max-width: 1199px) {
+  .u-dialog-section-4 .u-dialog-1 {
+    width: 921px;
+    height: auto;
+  }
+
+  .u-dialog-section-4 .u-table-1 {
+    height: 350px;
+  }
+}
+
+@media (max-width: 991px) {
+  .u-dialog-section-4 .u-dialog-1 {
+    width: 720px;
+  }
+
+  .u-dialog-section-4 .u-container-layout-1 {
+    padding-bottom: 30px;
+  }
+}
+
+@media (max-width: 767px) {
+  .u-dialog-section-4 .u-dialog-1 {
+    width: 540px;
+  }
+
+  .u-dialog-section-4 .u-container-layout-1 {
+    padding-top: 30px;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+@media (max-width: 575px) {
+  .u-dialog-section-4 .u-dialog-1 {
+    width: 921px;
+    height: auto;
+  }
+
+  .u-dialog-section-4 .u-container-layout-1 {
+    padding: 40px 30px;
+  }
+
+  .u-dialog-section-4 .u-table-1 {
+    height: auto;
+  }
+}</style><section class="u-align-center u-black u-clearfix u-container-style u-dialog-block u-opacity u-opacity-70 u-dialog-section-5" id="carousel_5710">
+      <div class="u-align-left u-container-style u-dialog u-white u-dialog-1">
+        <div class="u-container-layout u-container-layout-1">
+          <div class="u-table u-table-responsive u-table-1">
+            <table class="u-table-entity">
+              <colgroup>
+                <col width="11.2%">
+                <col width="30.5%">
+                <col width="22.4%">
+                <col width="35.9%">
+              </colgroup>
+              <thead class="u-black u-table-header u-table-header-1">
+                <tr style="height: 101px;">
+                  <th class="u-border-1 u-border-black u-table-cell">&nbsp; &nbsp; &nbsp; &nbsp; ID</th>
+                  <th class="u-border-1 u-border-black u-table-cell">&nbsp; &nbsp; &nbsp; &nbsp; NOMBRE</th>
+                  <th class="u-border-1 u-border-black u-table-cell">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;TREN&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;SUPERIOR</th>
+                  <th class="u-border-1 u-border-black u-table-cell">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;TREN&nbsp;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;INFERIOR
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="u-table-body">
+                <tr style="height: 82px;">
+                  <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
+                  <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
+                  <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
+                  <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
+                </tr>
+                <tr style="height: 83px;">
+                  <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
+                  <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
+                  <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
+                  <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
+                </tr>
+                <tr style="height: 83px;">
+                  <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
+                  <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
+                  <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
+                  <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
+                </tr>
+                <tr style="height: 83px;">
+                  <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
+                  <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
+                  <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
+                  <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div><button class="u-dialog-close-button u-icon u-text-grey-50 u-icon-1"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 413.348 413.348" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-5801"></use></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xml:space="preserve" class="u-svg-content" viewBox="0 0 413.348 413.348" id="svg-5801"><path d="m413.348 24.354-24.354-24.354-182.32 182.32-182.32-182.32-24.354 24.354 182.32 182.32-182.32 182.32 24.354 24.354 182.32-182.32 182.32 182.32 24.354-24.354-182.32-182.32z"></path></svg></button>
+      </div>
+    </section><style> .u-dialog-section-5 {
+  min-height: 826px;
+}
+
+.u-dialog-section-5 .u-dialog-1 {
+  width: 921px;
+  min-height: 518px;
+  margin: 178px auto;
+}
+
+.u-dialog-section-5 .u-container-layout-1 {
+  padding: 40px 22px;
+}
+
+.u-dialog-section-5 .u-table-1 {
+  width: 870px;
+  margin: 1px 0 0 auto;
+}
+
+.u-dialog-section-5 .u-table-header-1 {
+  font-weight: 700;
+  background-image: none;
+}
+
+.u-dialog-section-5 .u-icon-1 {
+  width: 15px;
+  height: 15px;
+  left: auto;
+  top: 17px;
+  position: absolute;
+  right: 16px;
+}
+
+@media (max-width: 1199px) {
+  .u-dialog-section-5 .u-dialog-1 {
+    width: 921px;
+    height: auto;
+  }
+
+  .u-dialog-section-5 .u-table-1 {
+    height: 350px;
+    width: 870px;
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 991px) {
+  .u-dialog-section-5 .u-dialog-1 {
+    width: 720px;
+  }
+
+  .u-dialog-section-5 .u-container-layout-1 {
+    padding-bottom: 30px;
+  }
+
+  .u-dialog-section-5 .u-table-1 {
+    width: 676px;
+  }
+}
+
+@media (max-width: 767px) {
+  .u-dialog-section-5 .u-dialog-1 {
+    width: 540px;
+  }
+
+  .u-dialog-section-5 .u-container-layout-1 {
+    padding-top: 30px;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .u-dialog-section-5 .u-table-1 {
+    width: 520px;
+  }
+}
+
+@media (max-width: 575px) {
+  .u-dialog-section-5 .u-dialog-1 {
+    width: 921px;
+    height: auto;
+  }
+
+  .u-dialog-section-5 .u-container-layout-1 {
+    padding: 40px 0;
+  }
+
+  .u-dialog-section-5 .u-table-1 {
+    width: 900px;
+    height: auto;
+  }
+}</style><section class="u-align-center u-black u-clearfix u-container-style u-dialog-block u-opacity u-opacity-70 u-dialog-section-6" id="carousel_2720">
+      <div class="u-align-left u-container-style u-dialog u-white u-dialog-1">
+        <div class="u-container-layout u-container-layout-1">
+          <div class="u-expanded-width u-table u-table-responsive u-table-1">
+            <table class="u-table-entity">
+              <colgroup>
+                <col width="7.1%">
+                <col width="15%">
+                <col width="11.3%">
+                <col width="17.3%">
+                <col width="12.3%">
+                <col width="6.7%">
+                <col width="8.7%">
+                <col width="10.8%">
+                <col width="10.8%">
+              </colgroup>
+              <thead class="u-black u-table-header u-table-header-1">
+                <tr style="height: 73px;">
+                  <th class="u-border-1 u-border-black u-table-cell">&nbsp; &nbsp; &nbsp; &nbsp; ID</th>
+                  <th class="u-border-1 u-border-black u-table-cell">&nbsp; &nbsp; &nbsp; &nbsp; NOMBRE</th>
+                  <th class="u-border-1 u-border-black u-table-cell">&nbsp; &nbsp;APELLIDO</th>
+                  <th class="u-border-1 u-border-black u-table-cell">&nbsp; &nbsp; &nbsp;EMAIL</th>
+                  <th class="u-border-1 u-border-black u-table-cell">&nbsp; &nbsp; TIPO DE<br>&nbsp; &nbsp;EJERCICIO
+                  </th>
+                  <th class="u-border-1 u-border-black u-table-cell">&nbsp;PESO</th>
+                  <th class="u-border-1 u-border-black u-table-cell">ALTURA</th>
+                  <th class="u-border-1 u-border-black u-table-cell">INSTRUCTOR</th>
+                  <th class="u-border-1 u-border-black u-table-cell">&nbsp; STATUS</th>
+                </tr>
+              </thead>
+              <tbody class="u-table-body">
+                <tr style="height: 79px;">
+                  <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
+                  <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
+                  <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
+                  <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
+                  <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
+                  <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
+                  <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
+                  <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
+                  <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
+                </tr>
+                <tr style="height: 79px;">
+                  <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
+                  <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
+                  <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
+                  <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
+                  <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
+                  <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
+                  <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
+                  <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
+                  <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
+                </tr>
+                <tr style="height: 79px;">
+                  <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
+                  <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
+                  <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
+                  <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
+                  <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
+                  <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
+                  <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
+                  <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
+                  <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
+                </tr>
+                <tr style="height: 79px;">
+                  <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
+                  <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
+                  <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
+                  <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
+                  <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
+                  <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
+                  <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
+                  <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
+                  <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div><button class="u-dialog-close-button u-icon u-text-grey-50 u-icon-1"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 413.348 413.348" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-5801"></use></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xml:space="preserve" class="u-svg-content" viewBox="0 0 413.348 413.348" id="svg-5801"><path d="m413.348 24.354-24.354-24.354-182.32 182.32-182.32-182.32-24.354 24.354 182.32 182.32-182.32 182.32 24.354 24.354 182.32-182.32 182.32 182.32 24.354-24.354-182.32-182.32z"></path></svg></button>
+      </div>
+    </section><style> .u-dialog-section-6 {
+  min-height: 826px;
+}
+
+.u-dialog-section-6 .u-dialog-1 {
+  width: 1119px;
+  min-height: 517px;
+  height: auto;
+  margin: 178px auto 60px;
+}
+
+.u-dialog-section-6 .u-container-layout-1 {
+  padding: 40px 0;
+}
+
+.u-dialog-section-6 .u-table-1 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.u-dialog-section-6 .u-table-header-1 {
+  font-weight: 700;
+  background-image: none;
+}
+
+.u-dialog-section-6 .u-icon-1 {
+  width: 15px;
+  height: 15px;
+  left: auto;
+  top: 17px;
+  position: absolute;
+  right: 16px;
+}
+
+@media (max-width: 1199px) {
+  .u-dialog-section-6 .u-dialog-1 {
+    width: 940px;
+  }
+
+  .u-dialog-section-6 .u-table-1 {
+    height: 350px;
+  }
+}
+
+@media (max-width: 991px) {
+  .u-dialog-section-6 .u-dialog-1 {
+    width: 720px;
+  }
+
+  .u-dialog-section-6 .u-container-layout-1 {
+    padding-bottom: 30px;
+  }
+}
+
+@media (max-width: 767px) {
+  .u-dialog-section-6 .u-dialog-1 {
+    width: 540px;
+  }
+
+  .u-dialog-section-6 .u-container-layout-1 {
+    padding-top: 30px;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+@media (max-width: 575px) {
+  .u-dialog-section-6 .u-dialog-1 {
+    width: 1119px;
+  }
+
+  .u-dialog-section-6 .u-container-layout-1 {
+    padding: 40px 0;
+  }
+
+  .u-dialog-section-6 .u-table-1 {
+    height: auto;
+  }
+}</style></body>
+</html>

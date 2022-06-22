@@ -54,5 +54,8 @@ public class Cliente{
     @Column
     private String imagen;
 
+    @Column(nullable = false)
+    private String rol;
+
 
 }

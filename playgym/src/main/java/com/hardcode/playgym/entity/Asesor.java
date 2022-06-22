@@ -34,8 +34,11 @@ public class Asesor implements Serializable {
     @Column()
     private boolean eliminado;
 
-    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
-    private List<GrupoMuscular> listaGrupoMuscular;
+    @Column(nullable = false)
+    private boolean trenSup;
+
+    @Column(nullable = false)
+    private boolean trenInf;
 
     @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private List<Cliente> clientes;

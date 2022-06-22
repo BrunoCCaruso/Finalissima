@@ -2,8 +2,10 @@ package com.hardcode.playgym.controller;
 
 
 import com.hardcode.playgym.entity.Asesor;
+import com.hardcode.playgym.entity.Cliente;
 import com.hardcode.playgym.entity.User;
 import com.hardcode.playgym.service.AsesorService;
+import com.hardcode.playgym.service.ClienteService;
 import com.hardcode.playgym.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -27,6 +29,7 @@ public class AuthController {
 
     private final UserService userService;
     private final AsesorService asesorService;
+    private final ClienteService clienteService;
 
     @GetMapping("/index")
     public ModelAndView index(@RequestParam(required = false) String error, @RequestParam(required = false) String logout, Principal principal) {
@@ -98,6 +101,13 @@ public class AuthController {
         return mav;
     }
 
+    @GetMapping("/info-cliente")
+    public ModelAndView infoCliente(HttpServletRequest request, Principal principal) {
+        ModelAndView mav = new ModelAndView("registro-info-usuario");
+        mav.addObject("cliente", new Cliente());
+        return mav;
+    }
+
     @GetMapping("/info-asesor")
     public ModelAndView infoAsesor(HttpServletRequest request, Principal principal) {
         ModelAndView mav = new ModelAndView("registro-info-asesor");
@@ -136,10 +146,26 @@ public class AuthController {
 
     @GetMapping("/mi-perfil-admin")
     public ModelAndView miPerfilAdmin(HttpServletRequest request, Principal principal) {
-        ModelAndView mav = new ModelAndView("mi-perfil-admin");
+        ModelAndView mav = new ModelAndView("perfil-admin");
         return mav;
     }
 
+
+
+    @PostMapping("/register/cliente-info")
+    public RedirectView signupCliente(Cliente clienteDto, RedirectAttributes attributes) {
+        RedirectView redirect = new RedirectView("/auth/mi-perfil-usuario");
+
+        try {
+            clienteService.create(clienteDto);
+        } catch (IllegalArgumentException e ) {
+            attributes.addFlashAttribute("cliente", clienteDto);
+            attributes.addFlashAttribute("exception", e.getMessage());
+            redirect.setUrl("/auth/sign-up");
+        }
+
+        return redirect;
+    }
 
 
 
