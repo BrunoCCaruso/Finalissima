@@ -28,14 +28,24 @@ public class AuthController {
     private final UserService userService;
     private final AsesorService asesorService;
 
+    @GetMapping("/index")
+    public ModelAndView index(@RequestParam(required = false) String error, @RequestParam(required = false) String logout, Principal principal) {
+        ModelAndView mav = new ModelAndView("index");
+        return mav;
+    }
+
     @GetMapping("/login")
     public ModelAndView login(@RequestParam(required = false) String error, @RequestParam(required = false) String logout, Principal principal) {
-        ModelAndView mav = new ModelAndView("indexCristian");
-
+        ModelAndView mav = new ModelAndView("login-form");
         if (error != null) mav.addObject("error", "Invalid email or password");
         if (logout != null) mav.addObject("logout", "You have successfully exited the platform");
         if (principal != null) mav.setViewName("redirect:/");
+        return mav;
+    }
 
+    @GetMapping("/ejercicios")
+    public ModelAndView vistaEjercicios(Asesor asesorDto, RedirectAttributes attributes) {
+        ModelAndView mav = new ModelAndView("seccion-ejercicio");
         return mav;
     }
 
@@ -117,6 +127,19 @@ public class AuthController {
         ModelAndView mav = new ModelAndView("mi-perfil-asesor");
         return mav;
     }
+
+    @GetMapping("/mi-perfil-cliente")
+    public ModelAndView miPerfilCliente(HttpServletRequest request, Principal principal) {
+        ModelAndView mav = new ModelAndView("mi-perfil-usuario");
+        return mav;
+    }
+
+    @GetMapping("/mi-perfil-admin")
+    public ModelAndView miPerfilAdmin(HttpServletRequest request, Principal principal) {
+        ModelAndView mav = new ModelAndView("mi-perfil-admin");
+        return mav;
+    }
+
 
 
 

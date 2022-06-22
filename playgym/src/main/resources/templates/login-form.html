@@ -1,52 +1,267 @@
-<!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
-<head th:replace="fragments/head :: head"></head>
+<!--== ************************************************************************==-->
+
+
+
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Iniciar Sesion - PlayGym - Gym & Fitness</title>
+
+    <!--== Favicon ==-->
+    <link rel="shortcut icon" th:href="@{/img/logo_playgym.png}" type="image/x-icon" />
+
+    <!--== Google Fonts ==-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,500i,700,900,900i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oswald:200,400,500,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Exo:400" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet" type="text/css"/>
+
+    <!--== Bootstrap CSS ==-->
+    <link th:href="@{/css/bootstrap.min-login.css}" rel="stylesheet"/>
+    <!--== Font-awesome Icons CSS ==-->
+    <link th:href="@{/css/font-awesome.min.css}" rel="stylesheet"/>
+    <!--== Pe Icon 7 Min Icons CSS ==-->
+    <link th:href="@{/css/pe-icon-7-stroke.min.css}" rel="stylesheet"/>
+    <!--== Animate CSS ==-->
+    <link th:href="@{/css/animate.css}" rel="stylesheet"/>
+    <!--== Aos CSS ==-->
+    <link th:href="@{/css/aos.css}" rel="stylesheet"/>
+    <!--== FancyBox CSS ==-->
+    <link th:href="@{/css/jquery.fancybox.min.css}" rel="stylesheet"/>
+    <!--== Slicknav CSS ==-->
+    <link th:href="@{/css/slicknav.css}" rel="stylesheet"/>
+    <!--== Swiper CSS ==-->
+    <link th:href="@{/css/swiper.min.css}" rel="stylesheet"/>
+    <!--== Slick CSS ==-->
+    <link th:href="@{/css/slick.css}" rel="stylesheet"/>
+    <!--== Main Style CSS ==-->
+    <link th:href="@{/css/style-registro.css}" rel="stylesheet" />
+
+</head>
 
 <body>
 
-<header th:replace="fragments/auth-header :: header"></header>
+<!--wrapper start-->
+<div class="wrapper">
 
-<main>
-    <div class="container p-5">
+  
+  <!--== Start Header Wrapper ==-->
+  
+    <div class="container">
+      <div class="row row-gutter-0">
+        <div class="col-4 col-xs-3 col-sm-3 col-md-3 col-xl-3">
+          <div class="header-logo-area">
+            <a href="index.html">
+              <img class="logo-main" th:src="@{/img/playgymregister.png}" alt="Logo" /> 
+            </a>
+          </div>
+        </div>  
+      </div>
+    </div>
+  </header>
+  <!--== End Header Wrapper ==-->
+  
+  
+  
+
+    <!--== Start Contact Area ==-->
+    <div class="account-login-area">
+      <div class="container">
         <div class="row">
-            <div class="col-md-4 mx-auto px-0">
-                <div th:if="${error}" th:text="${error}" class="alert alert-danger shadow text-center"></div>
-                <div th:if="${logout}" th:text="${logout}" class="alert alert-success shadow text-center"></div>
-
-                <div class="card text-center shadow">
-                    <div class="card-header">
-                        <h3>Login</h3>
-                    </div>
-                    <div class="card-body">
-                        <form th:action="@{/logincheck}" method="post" autocomplete="off" class="needs-validation mb-4"
-                              novalidate>
-
-                            <div class="form-group mb-3">
-                                <input type="email" name="email" placeholder="Email" class="form-control" required/>
-                                <div class="invalid-feedback text-start">Email is required</div>
-                            </div>
-
-                            <div class="form-group mb-3">
-                                <input type="password" name="pwd" placeholder="Password" class="form-control" required/>
-                                <div class="invalid-feedback text-start">Password is required</div>
-                            </div>
-
-                            <div class="form-group d-grid gap-2">
-                                <button class="btn btn-success" type="submit">Send</button>
-                            </div>
-                        </form>
-                    </div>
+          <div class="col-lg-7 m-auto">
+            <div class="login-top">
+              <nav class="login-form-nav">
+                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                  <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Iniciar Sesion</button>
+                  
                 </div>
+              </nav>
             </div>
+
+            <div th:if="${error}" th:text="${error}" class="alert alert-danger shadow text-center"></div>
+            <div th:if="${logout}" th:text="${logout}" class="alert alert-success shadow text-center"></div>
+
+
+
+            <div class="login-bottom">
+              <div class="login-form-content tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+
+                  <div class="login-form">
+                    <form class="login-form-wrapper needs-validation mb-4" id="login-form"  th:action="@{/logincheck}" method="post" autocomplete="off" novalidate>
+                      <div class="row">
+                        <div class="col-lg-12">
+                          <div class="row">
+                            <div class="col-md-12">
+                              <div class="form-group">
+                                <label for="UserName" class="form-label">Correo electronico *</label>
+                                <input type="email" name="email" class="form-control" id="UserName" required>
+                              </div>
+                            </div>
+                            <div class="col-md-12">
+                              <div class="form-group mb-0">
+                                <label for="password" class="form-label mt-15">Contraseña *</label>
+                                <input type="password" name="pwd" class="form-control" id="password" required>
+                              </div>
+                            </div>
+                            <div class="col-md-12">
+                              <div class="form-group form-group-info">
+                                <button class="btn btn-theme btn-black" type="submit">Acceder</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                  <!-- Message Notification -->
+                  <div class="form-message"></div>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--== End Contact Area ==-->
+  </main>
+
+<footer class="bg-dark text-center text-white">
+    <!-- Grid container -->
+    <div class="container p-4 pb-0">
+        <!-- Section: Social media -->
+        <div class="row">
+            <section class="mb-4">
+                <!-- Facebook -->
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+
+                <!-- Twitter -->
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                    <i class="fab fa-twitter"></i>
+                </a>
+
+                <!-- Google -->
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                    <i class="fab fa-google"></i>
+                </a>
+
+                <!-- Instagram -->
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                    <i class="fab fa-instagram"></i>
+                </a>
+
+                <!-- Linkedin -->
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+
+                <!-- Github -->
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                    <i class="fab fa-github"></i>
+                </a>
+            </section>
+            <!-- Section: Social media -->
+
+            <!-- Grid container -->
+
+            <!-- Copyright -->
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+                © 2022 Copyright:
+                <a class="text-white" href="#">HardCode Team 7</a>
+            </div>
+            <!-- Copyright -->
         </div>
     </div>
-</main>
+</footer>
+<!-- End of .container -->
+<!--== End Footer Area Wrapper ==-->
+  
+  <!--== Scroll Top Button ==-->
+  <div class="scroll-to-top"><span class="fa fa-angle-double-up"></span></div>
 
-<footer th:replace="fragments/footer :: footer"></footer>
+  <!--== Start Side Menu ==-->
+  <aside class="off-canvas-wrapper">
+    <div class="off-canvas-inner">
+      <div class="off-canvas-overlay d-none"></div>
+      <!-- Start Off Canvas Content Wrapper -->
+      <div class="off-canvas-content">
+        <!-- Off Canvas Header -->
+        <div class="off-canvas-header">
+          <div class="close-action">
+            <button class="btn-close"><i class="pe-7s-close"></i></button>
+          </div>
+        </div>
+
+        <div class="off-canvas-item">
+          <!-- Start Mobile Menu Wrapper -->
+          <div class="res-mobile-menu">
+            <!-- Note Content Auto Generate By Jquery From Main Menu -->
+          </div>
+          <!-- End Mobile Menu Wrapper -->
+        </div>
+        <!-- Off Canvas Footer -->
+        <div class="off-canvas-footer"></div>
+      </div>
+      <!-- End Off Canvas Content Wrapper -->
+    </div>
+  </aside>
+  <!--== End Side Menu ==-->
+</div>
+
+<!--=======================Javascript============================-->
+
+<!--=== Modernizr Min Js ===-->
+<script th:src="@{/js/modernizr.js}"></script>
+<!--=== jQuery Min Js ===-->
+<script th:src="@{/js/jquery-main.js}"></script>
+<!--=== jQuery Migration Min Js ===-->
+<script th:src="@{/js/jquery-migrate.js}"></script>
+<!--=== Popper Min Js ===-->
+<script th:src="@{/js/popper.min.js}"></script>
+<!--=== Bootstrap Min Js ===-->
+<script th:src="@{/js/bootstrap.min.js}"></script>
+<!--=== jquery Appear Js ===-->
+<script th:src="@{/js/jquery.appear.js}"></script>
+<!--=== jquery Swiper Min Js ===-->
+<script th:src="@{/js/swiper.min.js}"></script>
+<!--=== jquery Fancybox Min Js ===-->
+<script th:src="@{/js/fancybox.min.js}"></script>
+<!--=== jquery Aos Min Js ===-->
+<script th:src="@{/js/aos.min.js}"></script>
+<!--=== jquery Slicknav Js ===-->
+<script th:src="@{/js/jquery.slicknav.js}"></script>
+<!--=== jquery Countdown Js ===-->
+<script th:src="@{/js/jquery.countdown.min.js}"></script>
+<!--=== jquery Tippy Js ===-->
+<script th:src="@{/js/tippy.all.min.js}"></script>
+<!--=== Isotope Min Js ===-->
+<script th:src="@{/js/isotope.pkgd.min.js}"></script>
+<!--=== jquery Vivus Js ===-->
+<script th:src="@{/js/vivus.js}"></script>
+<!--=== Parallax Min Js ===-->
+<script th:src="@{/js/parallax.min.js}"></script>
+<!--=== Slick  Min Js ===-->
+<script th:src="@{/js/slick.min.js}"></script>
+<!--=== jquery Wow Min Js ===-->
+<script th:src="@{/js/wow.min.js}"></script>
+<!--=== jquery Zoom Min Js ===-->
+<script th:src="@{/js/jquery-zoom.min.js}"></script>
 
 <script th:src="@{/js/bootstrap.bundle.min.js}"></script>
 <script th:src="@{/js/validation.js}"></script>
+
+<!--=== Custom Js ===-->
+<script th:src="@{/js/custom.js}"></script>
+
 </body>
 
 </html>
