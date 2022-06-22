@@ -134,6 +134,13 @@ public class AuthController {
         return mav;
     }
 
+    @GetMapping("/mi-perfil-admin")
+    public ModelAndView miPerfilAdmin(HttpServletRequest request, Principal principal) {
+        ModelAndView mav = new ModelAndView("mi-perfil-admin");
+        return mav;
+    }
+
+
 
 
     @PostMapping("/register/asesor-info")

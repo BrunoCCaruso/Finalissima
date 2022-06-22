@@ -64,7 +64,17 @@
                     <div class="header-align">
                         <div class="header-navigation-area d-none d-xl-block">
                             <ul class="main-menu nav position-relative">
-                                <li><a th:href="@{/auth/mi-perfil-cliente}">Mi perfil</a></li>
+
+                                <li sec:authorize="hasRole('ADMIN')" class="nav-item">
+                                    <a th:href="@{/auth/mi-perfil-admin}" class="nav-link text-white" >Mi perfil</a>
+                                </li>
+                                <li sec:authorize="hasRole('ASESOR')" class="nav-item">
+                                    <a th:href="@{/auth/mi-perfil-asesor}" class="nav-link text-white" >Mi perfil</a>
+                                </li>
+                                <li sec:authorize="hasRole('CLIENTE')" class="nav-item">
+                                    <a th:href="@{/auth/mi-perfil-cliente}" class="nav-link text-white" >Mi perfil</a>
+                                </li>
+
                                 <li><a class= "btn btn-theme" th:href="@{/logout}">Cerrar Sesion</a></li>
                             </ul>
                         </div>
@@ -78,6 +88,15 @@
             </div>
     </header>
     <!--== End Header Wrapper ==-->
+    <div sec:authorize="hasRole('ADMIN')" class="nav-item">
+        <h1>BIENVENIDO SUJETO DE ROL ADMIN</h1>
+    </div>
+    <div sec:authorize="hasRole('ASESOR')" class="nav-item">
+        <h1>BIENVENIDO SUJETO DE ROL ASESOR</h1>
+    </div>
+    <div sec:authorize="hasRole('CLIENTE')" class="nav-item">
+        <h1>BIENVENIDO SUJETO DE ROL CLIENTE</h1>
+    </div>
 
     <main id="inicio" class="main-content">
         <!--== Start Hero Area Wrapper ==-->
