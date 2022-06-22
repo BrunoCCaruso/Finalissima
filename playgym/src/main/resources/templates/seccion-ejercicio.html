@@ -1,12 +1,584 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PlayGym Entramientos Personalizados</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Inicio - PlayGym - Gym & Fitness</title>
+
+    <!--== Favicon ==-->
+    <link rel="shortcut icon" th:href="@{/img/logo_playgym.png}" type="image/x-icon" />
+
+    <!--== Google Fonts ==-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,500i,700,900,900i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oswald:200,400,500,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Exo:400" rel="stylesheet">
+
+
+    <!--== Bootstrap CSS ==-->
+    <link th:href="@{/css/bootstrap.min-index.css}" rel="stylesheet"/>
+    <!--== Font-awesome Icons CSS ==-->
+    <link th:href="@{/css/font-awesome.min.css}" rel="stylesheet"/>
+    <!--== Pe Icon 7 Min Icons CSS ==-->
+    <link th:href="@{/css/pe-icon-7-stroke.min.css}" rel="stylesheet"/>
+    <!--== Animate CSS ==-->
+    <link th:href="@{/css/animate.css}" rel="stylesheet"/>
+    <!--== Aos CSS ==-->
+    <link th:href="@{/css/aos.css}" rel="stylesheet"/>
+    <!--== FancyBox CSS ==-->
+    <link th:href="@{/css/jquery.fancybox.min.css}" rel="stylesheet"/>
+    <!--== Slicknav CSS ==-->
+    <link th:href="@{/css/slicknav.css}" rel="stylesheet"/>
+    <!--== Swiper CSS ==-->
+    <link th:href="@{/css/swiper.min.css}" rel="stylesheet"/>
+    <!--== Slick CSS ==-->
+    <link th:href="@{/css/slick.css}" rel="stylesheet"/>
+    <!--== Main Style CSS ==-->
+    <link th:href="@{/css/style.css}" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/24f0473485.js" crossorigin="anonymous"></script>
+
 </head>
+
 <body>
-    
+
+<!--wrapper start-->
+<div class="wrapper home-default-wrapper">
+
+
+
+    <!--== Start Header Wrapper ==-->
+    <header class="header-area header-default header-transparent header-style sticky-header">
+        <div class="container">
+            <div class="row row-gutter-0 align-items-center">
+                <div class="col-4 col-xs-3 col-sm-3 col-md-3 col-xl-3">
+                    <div class="header-logo-area">
+                        <a href="index.html">
+                            <img class="logo-main" th:src="@{/img/logo_playgym.png}" alt="Logo" />
+
+                        </a>
+                    </div>
+                </div>
+                <div class="col-8 col-sm-9 col-xl-9">
+                    <div class="header-align">
+                        <div class="header-navigation-area d-none d-xl-block">
+                            <ul class="main-menu nav position-relative">
+                                <li><a th:href="@{/auth/mi-perfil-cliente}">Mi perfil</a></li>
+                                <li><a class= "btn btn-theme" th:href="@{/logout}">Cerrar Sesion</a></li>
+                            </ul>
+                        </div>
+                        <div class="header-action-area">
+                            <button class="btn-menu d-xl-none">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </header>
+    <!--== End Header Wrapper ==-->
+
+    <main id="inicio" class="main-content">
+        <!--== Start Hero Area Wrapper ==-->
+        <section class="home-slider-area slider-default">
+            <div class="home-slider-content">
+                <div class="swiper-container home-slider-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <!-- Start Slide Item -->
+                            <div class="home-slider-item">
+                                <div class="bg-thumb bg-img" th:data-bg-img="@{/img/imagen012.jpg}"></div>
+                                <div class="slider-content-area">
+                                    <div class="container">
+                                        <div class="row align-items-center">
+                                            <div class="col-sm-8 offset-sm-2 col-lg-5 offset-lg-0">
+                                                <div class="content">
+                                                    <div class="inner-content">
+                                                        <div class="icon">
+                                                            <img th:src="@{/img/g1.png}" alt="Image">
+                                                        </div>
+                                                        <h1>
+                                                            <li> NUESTRO CUERPO ES  </li>
+                                                            <li> CAPAZ DE TODO</li>
+                                                            <li> LA MENTE ES A QUIEN</li>
+                                                            <li>TENEMOS QUE CONVENCER</li>
+                                                        </h1>
+
+                                                        <a href="registro.html" class="btn-theme">¡Comenzá Ya!</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-7 col-lg-7">
+                                                <div class="slider-thumb">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Slide Item -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--== End Hero Area Wrapper ==-->
+
+
+
+
+
+
+
+
+
+        <!--== Start Service Area ==-->
+        <section class="classical-workout-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="classical-workout-wrap bg-img" data-bg-img="cristian/assets/img/photos/workout.bg2.png">
+                            <div class="column-left bg-img" th:data-bg-img="@{/img/imagen00.jpg}" data-aos="fade-right" data-aos-duration="1000">
+                                <div class="content">
+                                    <h2 class="title">Entrenamiento<br>Personalizado</h2>
+                                    <p>Lorem ipsum dolor amet, consectetur adipiscing elit, sed do eiod tempor incididunt ut labore</p>
+                                    <a class="btn-link" href="registro-seccion.html">ADELANTE YA</a>
+                                </div>
+                            </div>
+                            <div class="shape-style" data-aos="fade-right" data-aos-duration="1000"></div>
+                            <div class="column-right">
+                                <div class="workout-items">
+                                    <div class="workout-item">
+                                        <div class="thumb">
+                                            <img th:src="@{/img/imagen02.jpg}" alt="Image">
+                                        </div>
+                                        <div class="content">
+                                            <h3>01.</h3>
+                                        </div>
+                                    </div>
+                                    <div class="workout-item">
+                                        <div class="thumb">
+                                            <img th:src="@{/img/imagen03.jpg}" alt="Image">
+                                        </div>
+                                        <div class="content">
+                                            <h3>02.</h3>
+                                        </div>
+                                    </div>
+                                    <div class="workout-item mb-0 mb-xxs-40">
+                                        <div class="thumb">
+                                            <img th:src="@{/img/imagen04.jpg}" alt="Image">
+                                        </div>
+                                        <div class="content">
+                                            <h3>03.</h3>
+                                        </div>
+                                    </div>
+                                    <div class="workout-item mb-0">
+                                        <div class="thumb">
+                                            <img th:src="@{/img/imagen05.jpg}" alt="Image">
+                                        </div>
+                                        <div class="content">
+                                            <h3>04.</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--== End Service Area ==-->
+
+        <!--== Start Gallery Slider Area Wrapper ==-->
+        <section class="gallery-area gallery-default-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-xl-4 pr-0">
+                        <div class="section-title stitle-style2" data-aos="fade-up" data-aos-duration="1000">
+                            <div class="subtitle">PlayGym!</div>
+                            <h2 class="title">CREE EN <span>TU MISMO, <br>SE CAPAZ </span>SALUDABLE</h2>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xl-8 d-none d-md-block text-center text-md-end">
+                        <a href="classes.html" class="btn-theme">CONTACTO</a>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid p-0">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="gallery-slider-content">
+                            <div class="swiper-container gallery-slider-container">
+                                <div class="swiper-wrapper gallery-slider">
+                                    <div class="swiper-slide">
+                                        <div class="gallery-item">
+                                            <div class="thumb">
+                                                <a class="lightbox-image" data-fancybox="gallery" th:href="@{/img/imagen06.jpg}"><img th:src="@{/img/imagen06.jpg}" alt="Image"></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="gallery-item">
+                                            <div class="thumb">
+                                                <a class="lightbox-image" data-fancybox="gallery" th:href="@{/img/imagen07.jpg}"><img th:src="@{/img/imagen07.jpg}" alt="Image"></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="gallery-item">
+                                            <div class="thumb">
+                                                <a class="lightbox-image" data-fancybox="gallery" th:href="@{/img/imagen08.jpg}"><img th:src="@{/img/imagen08.jpg}" alt="Image"></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="gallery-item">
+                                            <div class="thumb">
+                                                <a class="lightbox-image" data-fancybox="gallery" th:href="@{/img/imagen09.jpg}"><img th:src="@{/img/imagen09.jpg}" alt="Image"></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--== End Gallery Slider Area Wrapper ==-->
+
+        <!--== Start Team Area ==-->
+        <section class="team-area team-default-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="section-title text-center" data-aos="fade-up" data-aos-duration="1000">
+                            <h2 class="title">PROFESSIONAL <span>INSTRUCTORS</span></h2>
+                            <div class="desc">
+                                <p>Gym classes dolor sit amet, consectetur adipiscing elit, sed do eiod tempor <br>didunt ut labore et dolore m et dolore magna aliqua minim niam</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" data-aos="fade-up" data-aos-duration="1100">
+                    <div class="col-sm-6 col-lg-3">
+                        <!-- Start Team Item -->
+                        <div class="team-item mb-md-30">
+                            <div class="team-member">
+                                <div class="thumb">
+                                    <a href="team-details.html"><img th:src="@{/img/imagen-asesor01.jpg}" alt="Image"></a>
+                                </div>
+                                <div class="content">
+                                    <div class="member-info">
+                                        <h4 class="name"><a href="team-details.html">Cristina Gonzalez</a></h4>
+                                        <h6 class="designation">Entrenadora Tren Superior</h6>
+                                        <div class="social-icons">
+                                            <a href="#/"><i class="fa fa-facebook icon"></i></a>
+                                            <a href="#/"><i class="fa fa-phone icon"></i></a>
+                                            <a href="#/"><i class="fa fa-instagram icon"></i></a>
+                                            <a href="#/"><i class="fa fa-twitter icon"></i></a>
+                                        </div>
+                                        <div class="team-footer">
+                                            <a class="btn" href="team-details.html">VER PERFIL</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Team Item -->
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <!-- Start Team Item -->
+                        <div class="team-item mb-md-30">
+                            <div class="team-member">
+                                <div class="thumb">
+                                    <a href="team-details.html"><img th:src="@{/img/imagen-asesor02.jpg}" alt="Image"></a>
+                                </div>
+                                <div class="content">
+                                    <div class="member-info">
+                                        <h4 class="name"><a href="team-details.html">Bruno Benitez</a></h4>
+                                        <h6 class="designation">Entrenador Crossfit</h6>
+                                        <div class="social-icons">
+                                            <a href="#/"><i class="fa fa-facebook icon"></i></a>
+                                            <a href="#/"><i class="fa fa-phone icon"></i></a>
+                                            <a href="#/"><i class="fa fa-instagram icon"></i></a>
+                                            <a href="#/"><i class="fa fa-twitter icon"></i></a>
+                                        </div>
+                                        <div class="team-footer">
+                                            <a class="btn" href="team-details.html">VER PERFIL</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Team Item -->
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <!-- Start Team Item -->
+                        <div class="team-item mb-xs-30">
+                            <div class="team-member">
+                                <div class="thumb">
+                                    <a href="team-details.html"><img th:src="@{/img/imagen-asesor03.jpg}" alt="Image"></a>
+                                </div>
+                                <div class="content">
+                                    <div class="member-info">
+                                        <h4 class="name"><a href="team-details.html">Alexa Camacho</a></h4>
+                                        <h6 class="designation">Entrenadora Spinnig</h6>
+                                        <div class="social-icons">
+                                            <a href="#/"><i class="fa fa-facebook icon"></i></a>
+                                            <a href="#/"><i class="fa fa-phone icon"></i></a>
+                                            <a href="#/"><i class="fa fa-instagram icon"></i></a>
+                                            <a href="#/"><i class="fa fa-twitter icon"></i></a>
+                                        </div>
+                                        <div class="team-footer">
+                                            <a class="btn" href="team-details.html">VER PERFIL</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Team Item -->
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <!-- Start Team Item -->
+                        <div class="team-item">
+                            <div class="team-member">
+                                <div class="thumb">
+                                    <a href="team-details.html"><img th:src="@{/img/imagen-asesor04.jpg}" alt="Image"></a>
+                                </div>
+                                <div class="content">
+                                    <div class="member-info">
+                                        <h4 class="name"><a href="team-details.html">Esequiel Messi</a></h4>
+                                        <h6 class="designation">Instructor Aerobico</h6>
+                                        <div class="social-icons">
+                                            <a href="#/"><i class="fa fa-facebook icon"></i></a>
+                                            <a href="#/"><i class="fa fa-phone icon"></i></a>
+                                            <a href="#/"><i class="fa fa-instagram icon"></i></a>
+                                            <a href="#/"><i class="fa fa-twitter icon"></i></a>
+                                        </div>
+                                        <div class="team-footer">
+                                            <a class="btn" href="#/">VER PERFIL</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Team Item -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--== End Team Area ==-->
+
+
+
+
+    </main>
+
+    <!--== Start Contact Area ==-->
+    <section id="contacto" class="contact-area position-relative">
+        <div class="contact-page-wrap">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 bg-secondary opacity-50">
+                        <div class="section-title stitle-style2">
+                            <div class="subtitle">NOSOTROS</div>
+                            <h2 class="title">ACA <span>VA LO<br>NOSOTROS Y </span>OBJETIVOS</h2>
+                        </div>
+                        <div class="testimonial-content" data-aos="fade-up" data-aos-duration="1000">
+                            <div class="testimonial-slider-content">
+                                <div class="swiper-container testimonial-slider-container">
+                                    <div class="swiper-wrapper testimonial-slider">
+                                        <div class="swiper-slide testimonial-single">
+                                            <div class="client-content">
+                                                <p class="text-light">Nuestra misión es transformar lo complicado en simple, es decir, aquí tendrás comodidad y menos burocracia desde los servicios en línea hasta el autoservicio en las sedes. PlayGym es una experiencia de entrenamiento completa, dentro y fuera del gimnasio.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Add Arrows -->
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="contact-form mb-md-90">
+                            <form class="contact-form-wrapper" id="contact-form" action="http://whizthemes.com/mail-php/raju/arden/mail.php" method="post">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="section-title">
+                                            <h2 class="title">CONTACTO</h2>
+                                            <div class="desc">
+                                                <p>Si necesita información, no dude en enviarme un mensaje. Intentaré responderle y darle los consejos adecuados sobre su mensaje.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="row row-gutter-12">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <input class="form-control text-dark" type="text" name="con_name" placeholder="Nombre">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <input class="form-control" type="email" name="con_email" placeholder="Email">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-group mb-0">
+                                                    <textarea name="con_message" placeholder="Mensaje"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-group mb-0">
+                                                    <button class="btn btn-theme" type="submit">ENVIAR</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- Message Notification -->
+                        <div class="form-message"></div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!--== End Contact Area ==-->
+
+    <!--== Start Footer Area Wrapper ==-->
+    <!-- Remove the container if you want to extend the Footer to full width. -->
+
+
+    <footer class="bg-dark text-center text-white">
+        <!-- Grid container -->
+        <div class="container p-4 pb-0">
+            <!-- Section: Social media -->
+            <section class="mb-4">
+                <!-- Facebook -->
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                    <i class="fa fa-facebook icon"></i>
+                </a>
+
+                <!-- Twitter -->
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                    <i class="fa fa-twitter icon"></i>
+                </a>
+
+                <!-- Google -->
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                    <i class="fa fa-google icon"></i>
+                </a>
+
+                <!-- Instagram -->
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                    <i class="fa fa-instagram icon"></i>
+                </a>
+
+                <!-- Linkedin -->
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                    <i class="fa fa-linkedin icon"></i>
+                </a>
+
+                <!-- Github -->
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                    <i class="fa fa-github icon"></i>
+                </a>
+            </section>
+            <!-- Section: Social media -->
+
+            <!-- Grid container -->
+
+            <!-- Copyright -->
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+                © 2022 Copyright:
+                <a class="text-white" href="https://mdbootstrap.com/">HardCode Team 7</a>
+            </div>
+            <!-- Copyright -->
+    </footer>
+
+    <!--== Scroll Top Button ==-->
+    <div class="scroll-to-top"><span class="fa fa-angle-double-up"></span></div>
+
+    <!--== Start Side Menu ==-->
+    <aside class="off-canvas-wrapper">
+        <div class="off-canvas-inner">
+            <div class="off-canvas-overlay d-none"></div>
+            <!-- Start Off Canvas Content Wrapper -->
+            <div class="off-canvas-content">
+                <!-- Off Canvas Header -->
+                <div class="off-canvas-header">
+                    <div class="close-action">
+                        <button class="btn-close"><i class="pe-7s-close"></i></button>
+                    </div>
+                </div>
+
+                <div class="off-canvas-item">
+                    <!-- Start Mobile Menu Wrapper -->
+                    <div class="res-mobile-menu">
+                        <!-- Note Content Auto Generate By Jquery From Main Menu -->
+                    </div>
+                    <!-- End Mobile Menu Wrapper -->
+                </div>
+                <!-- Off Canvas Footer -->
+                <div class="off-canvas-footer"></div>
+            </div>
+            <!-- End Off Canvas Content Wrapper -->
+        </div>
+    </aside>
+    <!--== End Side Menu ==-->
+</div>
+
+<!--=======================Javascript============================-->
+
+<!--=== Modernizr Min Js ===-->
+<script th:src="@{/js/modernizr.js}"></script>
+<!--=== jQuery Min Js ===-->
+<script th:src="@{/js/jquery-main.js}"></script>
+<!--=== jQuery Migration Min Js ===-->
+<script th:src="@{/js/jquery-migrate.js}"></script>
+<!--=== Popper Min Js ===-->
+<script th:src="@{/js/popper.min.js}"></script>
+<!--=== Bootstrap Min Js ===-->
+<script th:src="@{/js/bootstrap.min.js}"></script>
+<!--=== jquery Appear Js ===-->
+<script th:src="@{/js/jquery.appear.js}"></script>
+<!--=== jquery Swiper Min Js ===-->
+<script th:src="@{/js/swiper.min.js}"></script>
+<!--=== jquery Fancybox Min Js ===-->
+<script th:src="@{/js/fancybox.min.js}"></script>
+<!--=== jquery Aos Min Js ===-->
+<script th:src="@{/js/aos.min.js}"></script>
+<!--=== jquery Slicknav Js ===-->
+<script th:src="@{/js/jquery.slicknav.js}"></script>
+<!--=== jquery Countdown Js ===-->
+<script th:src="@{/js/jquery.countdown.min.js}"></script>
+<!--=== jquery Tippy Js ===-->
+<script th:src="@{/js/tippy.all.min.js}"></script>
+<!--=== Isotope Min Js ===-->
+<script th:src="@{/js/isotope.pkgd.min.js}"></script>
+<!--=== jquery Vivus Js ===-->
+<script th:src="@{/js/vivus.js}"></script>
+<!--=== Parallax Min Js ===-->
+<script th:src="@{/js/parallax.min.js}"></script>
+<!--=== Slick  Min Js ===-->
+<script th:src="@{/js/slick.min.js}"></script>
+<!--=== jquery Wow Min Js ===-->
+<script th:src="@{/js/wow.min.js}"></script>
+<!--=== jquery Zoom Min Js ===-->
+<script th:src="@{/js/jquery-zoom.min.js}"></script>
+
+<!--=== Custom Js ===-->
+<script th:src="@{/js/custom.js}"></script>
+
 </body>
+
 </html>

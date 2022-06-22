@@ -1,11 +1,43 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head th:replace="fragments/head :: head"></head>
+    <title>Iniciar Sesion - PlayGym - Gym & Fitness</title>
 
+    <!--== Favicon ==-->
+    <link rel="shortcut icon" th:href="@{/img/logo_playgym.png}" type="image/x-icon" />
+
+    <!--== Google Fonts ==-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,500i,700,900,900i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oswald:200,400,500,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Exo:400" rel="stylesheet">
+
+    <!--== Bootstrap CSS ==-->
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet"/>
+    <!--== Font-awesome Icons CSS ==-->
+    <link th:href="@{/css/font-awesome.min.css}" rel="stylesheet"/>
+    <!--== Pe Icon 7 Min Icons CSS ==-->
+    <link th:href="@{/css/pe-icon-7-stroke.min.css}" rel="stylesheet"/>
+    <!--== Animate CSS ==-->
+    <link th:href="@{/css/animate.css}" rel="stylesheet"/>
+    <!--== Aos CSS ==-->
+    <link th:href="@{/css/aos.css}" rel="stylesheet"/>
+    <!--== FancyBox CSS ==-->
+    <link th:href="@{/css/jquery.fancybox.min.css}" rel="stylesheet"/>
+    <!--== Slicknav CSS ==-->
+    <link th:href="@{/css/slicknav.css}" rel="stylesheet"/>
+    <!--== Swiper CSS ==-->
+    <link th:href="@{/css/swiper.min.css}" rel="stylesheet"/>
+    <!--== Slick CSS ==-->
+    <link th:href="@{/css/slick.css}" rel="stylesheet"/>
+    <!--== Main Style CSS ==-->
+    <link th:href="@{/css/style.css}" rel="stylesheet" />
+
+</head>
 <body>
-
-<header th:replace="fragments/auth-header :: header"></header>
 
 <main>
     <div class="container p-5">
@@ -42,8 +74,53 @@
         </div>
     </div>
 </main>
+<footer class="bg-dark text-center text-white">
+    <!-- Grid container -->
+    <div class="container p-4 pb-0">
+        <!-- Section: Social media -->
+        <section class="mb-4">
+            <!-- Facebook -->
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                <i class="fa fa-facebook icon"></i>
+            </a>
 
-<footer th:replace="fragments/footer :: footer"></footer>
+            <!-- Twitter -->
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                <i class="fa fa-twitter icon"></i>
+            </a>
+
+            <!-- Google -->
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                <i class="fa fa-google icon"></i>
+            </a>
+
+            <!-- Instagram -->
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                <i class="fa fa-instagram icon"></i>
+            </a>
+
+            <!-- Linkedin -->
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                <i class="fa fa-linkedin icon"></i>
+            </a>
+
+            <!-- Github -->
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                <i class="fa  fa-github icon"></i>
+            </a>
+        </section>
+        <!-- Section: Social media -->
+
+        <!-- Grid container -->
+
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2022 Copyright:
+            <a class="text-white" href="https://mdbootstrap.com/">HardCode Team 7</a>
+        </div>
+    </div>  <!-- Copyright -->
+</footer>
+
 
 <script th:src="@{/js/bootstrap.bundle.min.js}"></script>
 <script th:src="@{/js/validation.js}"></script>
