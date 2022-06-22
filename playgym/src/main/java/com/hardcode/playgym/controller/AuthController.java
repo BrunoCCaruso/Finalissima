@@ -154,7 +154,7 @@ public class AuthController {
 
     @PostMapping("/register/cliente-info")
     public RedirectView signupCliente(Cliente clienteDto, RedirectAttributes attributes) {
-        RedirectView redirect = new RedirectView("/auth/mi-perfil-usuario");
+        RedirectView redirect = new RedirectView("/auth/ejercicios");
 
         try {
             clienteService.create(clienteDto);
@@ -171,7 +171,7 @@ public class AuthController {
 
     @PostMapping("/register/asesor-info")
     public RedirectView signupAsesor(Asesor asesorDto, RedirectAttributes attributes) {
-        RedirectView redirect = new RedirectView("/auth/mi-perfil-asesor");
+        RedirectView redirect = new RedirectView("/auth/ejercicios");
 
         try {
             asesorService.create(asesorDto);
