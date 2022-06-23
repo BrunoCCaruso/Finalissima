@@ -31,23 +31,23 @@ public class EmailService {
     }
 
     @Async
-    public void sendCliente(String to) {
+    public void sendCliente(String to,String nombre) {
         SimpleMailMessage message = new SimpleMailMessage();
         message.setTo(to);
         message.setFrom(from);
         message.setSubject(SUBJECT);
-        message.setText("Te registrate como Cliente! Ahora elije el Entrenador que mejor se adapte a vos y comenzá tu entrenamiento!");
+        message.setText(nombre+" Te registrate como Cliente! Ahora elije el Entrenador que mejor se adapte a vos y comenzá tu entrenamiento!");
         sender.send(message);
 
     }
 
     @Async
-    public void sendAsesor(String to) {
+    public void sendAsesor(String to,String nombre) {
         SimpleMailMessage message = new SimpleMailMessage();
         message.setTo(to);
         message.setFrom(from);
         message.setSubject(SUBJECT);
-        message.setText("Te Registrate como Entrenador, ahora empieza a armar tus rutinas!");
+        message.setText(nombre + " Te Registrate como Entrenador, ahora empieza a armar tus rutinas!");
         sender.send(message);
 
     }

@@ -32,7 +32,7 @@ public class ClienteService{
         //asesor.setListaGrupoMuscular(); REVISAR IMPORTANTE
         cliente.setRol("CLIENTE");
 
-        emailService.sendCliente(clienteDto.getEmail());
+        emailService.sendCliente(clienteDto.getEmail(), clienteDto.getAlias());
         clienteRepository.save(cliente);
     }
 }

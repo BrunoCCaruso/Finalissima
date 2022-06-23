@@ -27,7 +27,7 @@ public class AsesorService {
         //asesor.setListaGrupoMuscular(); REVISAR IMPORTANTE
         asesor.setRol("ASESOR");
 
-        emailService.sendCliente(asesorDto.getEmail());
+        emailService.sendAsesor(asesorDto.getEmail(),asesorDto.getAlias());
         asesorRepository.save(asesor);
     }
 

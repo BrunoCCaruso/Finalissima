@@ -39,7 +39,7 @@ public class UserService implements UserDetailsService {
         if (userRepository.findAll().isEmpty()) user.setRole("ADMIN");
         else user.setRole(dto.getRole());
 
-        emailService.send(dto.getEmail());
+        //emailService.send(dto.getEmail());
         userRepository.save(user);
     }
 
