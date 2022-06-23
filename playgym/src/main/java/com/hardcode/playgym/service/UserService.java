@@ -25,6 +25,7 @@ public class UserService implements UserDetailsService {
 
     private final UserRepository userRepository;
     private final BCryptPasswordEncoder encoder;
+    private final EmailService emailService;
 
     @Transactional
     public void create(User dto) {
@@ -38,6 +39,7 @@ public class UserService implements UserDetailsService {
         if (userRepository.findAll().isEmpty()) user.setRole("ADMIN");
         else user.setRole(dto.getRole());
 
+        emailService.send(dto.getEmail());
         userRepository.save(user);
     }
 

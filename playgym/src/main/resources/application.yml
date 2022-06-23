@@ -13,3 +13,17 @@ spring:
   mvc:
     format:
       date: yyyy-MM-dd
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: playgym.app@gmail.com
+    password: vdovgjmhgdxxvfhq
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            required: true
+            enable: true
+            ssl:
+              true: smtp.gmail.com

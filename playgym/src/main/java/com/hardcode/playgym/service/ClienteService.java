@@ -14,6 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 public class ClienteService{
 
     private final ClienteRepository clienteRepository;
+    private final EmailService emailService;
 
     @Transactional
     public void create(Cliente clienteDto) {
@@ -31,6 +32,7 @@ public class ClienteService{
         //asesor.setListaGrupoMuscular(); REVISAR IMPORTANTE
         cliente.setRol("CLIENTE");
 
+        emailService.sendCliente(clienteDto.getEmail());
         clienteRepository.save(cliente);
     }
 }
